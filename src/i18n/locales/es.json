@@ -35,9 +35,8 @@
   "skills": {
     "title": "Stack tecnológico",
     "subtitle": "Lenguajes, frameworks, bases de datos, QA, cloud y herramientas de IA que utilizo",
-    "topStack": "Stack principal",
-    "secondaryStack": "Stack complementario",
-    "principal": "Principal",
+    "coreStack": "Stack principal",
+    "secondaryStack": "Otras tecnologías",
     "categories": {
       "languages": "Lenguajes",
       "frameworks": "Frameworks",
