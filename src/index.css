@@ -1,0 +1,9 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* REQ-7: smooth anchor scroll for in-page nav. Applied globally so PR 3's
+   header links scroll instead of jumping. */
+html {
+  scroll-behavior: smooth;
+}
