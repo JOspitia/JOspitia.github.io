@@ -28,6 +28,28 @@
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600&display=swap" />
+
+    <!-- JSON-LD: Schema.org Person. Google reads this to build the knowledge
+         graph entry for the site owner. sameAs links GitHub, LinkedIn and
+         the contact email so search can correlate identities. jobTitle and
+         description are single strings (Schema.org has no native i18n), so
+         we use neutral English to maximize the global technical audience.
+         Reference: https://schema.org/Person -->
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "Person",
+      "name": "Johan Ospitia",
+      "url": "https://jospitia.github.io/",
+      "jobTitle": "Full-Stack Developer & QA Automation Lead",
+      "description": "Professional portfolio of Johan Ospitia. Specialist in QA Automation, web development, and AI integration.",
+      "sameAs": [
+        "https://github.com/JOspitia",
+        "https://www.linkedin.com/in/johan-ospitia/",
+        "mailto:jjohanospitia@gmail.com"
+      ]
+    }
+    </script>
   </head>
   <body>
     <div id="root"></div>
