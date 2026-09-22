@@ -1,0 +1,74 @@
+{
+  "nav": {
+    "about": "Sobre mí",
+    "skills": "Habilidades",
+    "projects": "Proyectos",
+    "contact": "Contacto",
+    "skipToContent": "Saltar al contenido"
+  },
+  "hero": {
+    "greeting": "Hola, soy",
+    "name": "Johan Ospitia",
+    "tagline": "Desarrollador Full-Stack",
+    "ctaPrimary": "Ver proyectos",
+    "ctaSecondary": "Contactar"
+  },
+  "about": {
+    "title": "Sobre mí",
+    "lead": "Construyo productos web accesibles y performantes de punta a punta.",
+    "body": "Biografía provisional. Edita src/i18n/locales/es.json#about.body para reemplazarla con tu historia real.",
+    "highlights": {
+      "years": "5+ años",
+      "yearsLabel": "de experiencia profesional",
+      "projects": "20+ publicados",
+      "projectsLabel": "proyectos en producción",
+      "stack": "TS-first",
+      "stackLabel": "flujo de trabajo con TypeScript primero"
+    }
+  },
+  "skills": {
+    "title": "Habilidades",
+    "subtitle": "Herramientas y tecnologías con las que trabajo",
+    "categories": {
+      "languages": "Lenguajes",
+      "frameworks": "Frameworks",
+      "tools": "Herramientas",
+      "cloud": "Cloud y DevOps"
+    }
+  },
+  "projects": {
+    "title": "Proyectos destacados",
+    "subtitle": "Trabajo seleccionado — mira más en GitHub",
+    "viewRepo": "Ver repositorio",
+    "viewLive": "Ver en vivo",
+    "items": {
+      "weatherApp": {
+        "title": "Panel del clima",
+        "description": "Panel del clima responsive con geolocalización, caché y soporte offline."
+      },
+      "taskApi": {
+        "title": "API de gestión de tareas",
+        "description": "API REST con autenticación JWT, control de acceso por rol y documentación OpenAPI."
+      },
+      "notesApp": {
+        "title": "App de notas en Markdown",
+        "description": "Notas local-first con texto enriquecido, etiquetas y búsqueda full-text."
+      }
+    }
+  },
+  "contact": {
+    "title": "Contacto",
+    "subtitle": "Abierto a proyectos y conversaciones interesantes.",
+    "cta": "Escribir"
+  },
+  "footer": {
+    "builtWith": "Construido con React, TypeScript y Tailwind",
+    "deployedOn": "Desplegado en GitHub Pages",
+    "copyright": "© {{year}} Johan Ospitia. Todos los derechos reservados."
+  },
+  "languageSwitcher": {
+    "label": "Idioma",
+    "es": "Español",
+    "en": "Inglés"
+  }
+}
