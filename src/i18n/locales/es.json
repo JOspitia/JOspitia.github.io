@@ -69,6 +69,7 @@
   "languageSwitcher": {
     "label": "Idioma",
     "es": "Español",
-    "en": "Inglés"
+    "en": "Inglés",
+    "github": "GitHub"
   }
 }
