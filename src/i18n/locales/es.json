@@ -1,7 +1,8 @@
 {
   "nav": {
     "about": "Sobre mí",
-    "skills": "Habilidades",
+    "skills": "Stack",
+    "experience": "Experiencia",
     "projects": "Proyectos",
     "contact": "Contacto",
     "skipToContent": "Saltar al contenido"
@@ -9,56 +10,98 @@
   "hero": {
     "greeting": "Hola, soy",
     "name": "Johan Ospitia",
-    "tagline": "Desarrollador Full-Stack",
+    "headline": "Desarrollador Full-Stack y Líder de QA Automation",
+    "tagline": "Cali, Colombia · Disponible para trabajo remoto",
     "ctaPrimary": "Ver proyectos",
     "ctaSecondary": "Contactar"
   },
   "about": {
     "title": "Sobre mí",
-    "lead": "Construyo productos web accesibles y performantes de punta a punta.",
-    "body": "Biografía provisional. Edita src/i18n/locales/es.json#about.body para reemplazarla con tu historia real.",
+    "lead": "Ingeniero Informático con más de 4 años de experiencia como Desarrollador Full-Stack, con dominio de Java, Spring Boot, Node.js, PHP, React y Angular.",
+    "body": "He participado activamente en el ciclo completo del software: desde el levantamiento de requerimientos y la generación de historias de usuario hasta la definición de la arquitectura inicial, el desarrollo Full-Stack e implementación en producción. Adicionalmente, he liderado estrategias de calidad garantizando la estabilidad de sistemas mediante automatización avanzada con Playwright y Cypress.",
+    "ai": "Potencio cada etapa del ciclo de desarrollo con Inteligencia Artificial de forma concreta y medible: utilizo orquestadores como Gentle-AI, Kimi K2 y DeepSeek para planificar proyectos por fases y estructurar requerimientos técnicos; Open Code + MiniMax para validar historias de usuario contra el código implementado, reduciendo defectos antes de la salida a producción; y modelos como Gemini y Claude (vía Antigravity) para acelerar la escritura de código y la generación automatizada de suites de pruebas E2E con Playwright dentro de pipelines CI/CD bajo metodología Scrum. Actualmente complemento mi perfil cursando un Máster Universitario en Dirección y Gestión de TI en la UNIR (España).",
+    "photoAlt": "Retrato de Johan Ospitia",
     "highlights": {
-      "years": "5+ años",
-      "yearsLabel": "de experiencia profesional",
-      "projects": "20+ publicados",
-      "projectsLabel": "proyectos en producción",
-      "stack": "TS-first",
-      "stackLabel": "flujo de trabajo con TypeScript primero"
+      "years": "4+ años",
+      "yearsLabel": "cubriendo el ciclo completo de software",
+      "delivery": "40% de reducción",
+      "deliveryLabel": "en tiempos de entrega mediante orquestación de IA",
+      "defects": "30% de reducción",
+      "defectsLabel": "de defectos en producción con validación IA + automatización",
+      "coverage": "90% de cobertura",
+      "coverageLabel": "automatizada E2E en módulos de salud"
     }
   },
   "skills": {
-    "title": "Habilidades",
-    "subtitle": "Herramientas y tecnologías con las que trabajo",
+    "title": "Stack tecnológico",
+    "subtitle": "Lenguajes, frameworks, bases de datos, QA, cloud y herramientas de IA que utilizo",
     "categories": {
       "languages": "Lenguajes",
       "frameworks": "Frameworks",
-      "tools": "Herramientas",
-      "cloud": "Cloud y DevOps"
+      "databases": "Bases de datos",
+      "qa": "QA y Testing",
+      "cloud": "Cloud y DevOps",
+      "ai": "IA y Orquestadores"
+    }
+  },
+  "experience": {
+    "title": "Experiencia laboral",
+    "subtitle": "Más de 4 años cubriendo el ciclo completo de software",
+    "blueData": {
+      "title": "Ingeniero de IT y QA Automation / Desarrollador",
+      "period": "Feb 2024 – Sep 2026",
+      "sector": "Sector Salud",
+      "location": "Cali, Colombia",
+      "highlights": [
+        "Diseñé la arquitectura e implementé componentes Full-Stack para plataformas y módulos críticos en el sector salud (facturación, admisiones e historia clínica).",
+        "Coordiné la estrategia de calidad del equipo QA bajo metodología Scrum, diseñando marcos de automatización E2E y de APIs REST con Cypress y Playwright.",
+        "Integré herramientas de IA (Copilot, Gemini) para la generación de casos de prueba, logrando un 90% de cobertura y una reducción del 30% de defectos en producción.",
+        "Realicé validaciones de contratos API y sincronización de datos con servicios externos del Ministerio de Salud."
+      ],
+      "stack": "Stack: PHP 8, PostgreSQL, React, WebSockets, Docker, Cypress, Playwright, Postman, CI/CD."
+    },
+    "proing": {
+      "title": "Analista y Desarrollador de TIC",
+      "period": "Feb 2022 – Nov 2023",
+      "sector": "Ingeniería y Servicios",
+      "location": "Cali, Colombia",
+      "highlights": [
+        "Desarrollé y mantuve aplicaciones web y servicios RESTful en Java (Spring Boot), PHP y arquitecturas de microservicios, así como aplicaciones móviles nativas (Android/Java).",
+        "Gestioné y optimicé bases de datos en Oracle, PostgreSQL y MySQL, mejorando el rendimiento de consultas SQL complejas.",
+        "Diseñé y ejecuté pruebas unitarias, de integración y de validación de contratos para APIs REST.",
+        "Brindé apoyo transversal participando activamente en los procesos de selección, evaluación técnica y reclutamiento de personal del área TI.",
+        "Participé en todo el SDLC: levantamiento de requerimientos, historias de usuario, desarrollo e integración de infraestructura bajo Scrum."
+      ],
+      "stack": "Stack: Spring Boot (Java), Android (Java), Angular, PHP, MySQL, PostgreSQL, Oracle, Git."
     }
   },
   "projects": {
     "title": "Proyectos destacados",
-    "subtitle": "Trabajo seleccionado — mira más en GitHub",
+    "subtitle": "Trabajo seleccionado — mirá más en GitHub",
     "viewRepo": "Ver repositorio",
     "viewLive": "Ver en vivo",
     "items": {
-      "weatherApp": {
-        "title": "Panel del clima",
-        "description": "Panel del clima responsive con geolocalización, caché y soporte offline."
+      "resumeTailor": {
+        "title": "Resume Tailor AI v2.5",
+        "description": "Plataforma AI Full-Stack para auditar y adaptar CVs a ofertas laborales mediante orquestación en cadena de LLMs y análisis ATS. Generación rápida de PDF vectorial con Typst y procesamiento en tiempo real (SSE)."
       },
-      "taskApi": {
-        "title": "API de gestión de tareas",
-        "description": "API REST con autenticación JWT, control de acceso por rol y documentación OpenAPI."
+      "hrTech": {
+        "title": "HR-Tech SaaS Platform",
+        "description": "Plataforma SaaS Multi-Tenant empresarial para gestión integral de RRHH y nómina. Incluye aislamiento lógico de datos por empresa (RBAC/JWT) a nivel SQL y almacenamiento seguro en la nube."
       },
-      "notesApp": {
-        "title": "App de notas en Markdown",
-        "description": "Notas local-first con texto enriquecido, etiquetas y búsqueda full-text."
+      "fixlat": {
+        "title": "Tablero de Notas y Métricas Serverless",
+        "description": "Aplicación web Full-Stack para gestión de tareas drag-and-drop con arquitectura serverless desacoplada para optimizar costos de infraestructura procesando métricas en segundo plano."
+      },
+      "inventarios": {
+        "title": "Gestión de Inventarios y Monitoreo IoT",
+        "description": "Sistema de gestión de inventarios y trazabilidad de lotes. Incluye control de bodegas, reportes y monitoreo ambiental en tiempo real integrado con sensores IoT."
       }
     }
   },
   "contact": {
     "title": "Contacto",
-    "subtitle": "Abierto a proyectos y conversaciones interesantes.",
+    "subtitle": "Abierto a proyectos, propuestas profesionales y colaboraciones técnicas.",
     "cta": "Escribir"
   },
   "footer": {
@@ -71,5 +114,10 @@
     "es": "Español",
     "en": "Inglés",
     "github": "GitHub"
+  },
+  "socials": {
+    "github": "GitHub",
+    "linkedin": "LinkedIn",
+    "email": "Email"
   }
 }

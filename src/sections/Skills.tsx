@@ -8,12 +8,17 @@ import { SectionHeading } from '../components/SectionHeading';
 /**
  * Display order for skill categories. Matches the i18n key namespace
  * `skills.categories.*` and the union members in `SkillCategory`.
+ *
+ * PR 8a: extended from 4 to 6 categories (added `databases`, `qa`,
+ * `ai`) and switched the grid to `lg:grid-cols-3` to balance six tiles.
  */
 const CATEGORY_ORDER: readonly SkillCategory[] = [
   'languages',
   'frameworks',
-  'tools',
+  'databases',
+  'qa',
   'cloud',
+  'ai',
 ];
 
 function groupByCategory(items: readonly Skill[]): Map<SkillCategory, Skill[]> {
@@ -43,7 +48,7 @@ export function Skills(): JSX.Element {
     >
       <Container>
         <SectionHeading titleKey="skills.title" subtitleKey="skills.subtitle" />
-        <div className="grid grid-cols-1 gap-8 md:grid-cols-2">
+        <div className="grid grid-cols-1 gap-8 md:grid-cols-2 lg:grid-cols-3">
           {CATEGORY_ORDER.map((cat) => {
             const items = grouped.get(cat) ?? [];
             return (

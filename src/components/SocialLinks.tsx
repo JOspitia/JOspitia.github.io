@@ -7,6 +7,10 @@ import type { SocialLink } from '../types/social';
  * Inline SVG icon set, scoped to the closed `SocialLink.id` union so the
  * compiler catches a missed case. Keeping icons inline avoids shipping an
  * icon library for a handful of glyphs (decision per design #168 §Components).
+ *
+ * PR 8a: unchanged — icons were already in place. The component just
+ * renders the `profile.socials` array verbatim (now includes GitHub,
+ * LinkedIn, email).
  */
 function Icon({ id }: { id: SocialLink['id'] }): JSX.Element {
   switch (id) {
@@ -72,23 +76,32 @@ function Icon({ id }: { id: SocialLink['id'] }): JSX.Element {
   }
 }
 
+/**
+ * Social links list. For `mailto:` entries we skip `target`/`rel` because
+ * mail clients don't expect them (and the browser may warn about a
+ * missing `rel` on `noopener`-style anchors). PR 8a: applies the
+ * email-vs-external distinction.
+ */
 export function SocialLinks(): JSX.Element {
   const { t } = useTranslation();
   return (
     <ul className="flex flex-wrap items-center gap-3">
-      {profile.socials.map((social) => (
-        <li key={social.id}>
-          <a
-            href={social.url}
-            target="_blank"
-            rel="noopener noreferrer"
-            aria-label={t(social.labelKey)}
-            className="inline-flex items-center justify-center rounded p-2 text-ink transition-colors hover:bg-slate-100 hover:text-accent focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-accent"
-          >
-            <Icon id={social.id} />
-          </a>
-        </li>
-      ))}
+      {profile.socials.map((social) => {
+        const isEmail = social.id === 'email';
+        return (
+          <li key={social.id}>
+            <a
+              href={social.url}
+              target={isEmail ? undefined : '_blank'}
+              rel={isEmail ? undefined : 'noopener noreferrer'}
+              aria-label={t(social.labelKey)}
+              className="inline-flex items-center justify-center rounded p-2 text-ink transition-colors hover:bg-slate-100 hover:text-accent focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-accent"
+            >
+              <Icon id={social.id} />
+            </a>
+          </li>
+        );
+      })}
     </ul>
   );
 }

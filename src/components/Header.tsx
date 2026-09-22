@@ -5,12 +5,19 @@ import { LanguageSwitcher } from './LanguageSwitcher';
 import { useActiveSection } from '../hooks/useActiveSection';
 import { profile } from '../data/profile';
 
-const NAV_IDS = ['about', 'skills', 'projects', 'contact'] as const;
+/**
+ * Nav targets — order matches section order in `App.tsx`. PR 8a adds
+ * `'experience'` between `'skills'` and `'projects'` to match the new
+ * `<Experience />` section. The closed tuple type keeps the i18n map
+ * exhaustive at compile time.
+ */
+const NAV_IDS = ['about', 'skills', 'experience', 'projects', 'contact'] as const;
 type NavId = (typeof NAV_IDS)[number];
 
 const NAV_KEYS: Record<NavId, string> = {
   about: 'nav.about',
   skills: 'nav.skills',
+  experience: 'nav.experience',
   projects: 'nav.projects',
   contact: 'nav.contact',
 };

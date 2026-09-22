@@ -4,11 +4,17 @@ import { profile } from '../data/profile';
 import { Button } from '../components/Button';
 
 /**
- * Hero section — first viewport, bilingual greeting + headline + tagline +
- * two anchor CTAs (`#projects`, `#contact`). Data comes from `profile`
- * (name, taglineKey) and copy comes from i18n. The two CTA links smooth-scroll
- * to their target sections; we intercept the click so the browser history
- * stays clean.
+ * Hero section — first viewport, bilingual greeting + name + headline
+ * (from `profile.headlineKey`) + tagline (from `profile.taglineKey`) +
+ * two anchor CTAs (`#projects`, `#contact`). Identity data comes from
+ * `profile` (name, headlineKey, taglineKey); copy comes from i18n.
+ *
+ * The two CTA links smooth-scroll to their target sections; we intercept
+ * the click so the browser history stays clean.
+ *
+ * PR 8a: adds a second `<h2>` for the professional headline (accent color)
+ * under the personal name, and surfaces the bilingual location/remote
+ * tagline.
  */
 export function Hero(): JSX.Element {
   const { t } = useTranslation();
@@ -32,11 +38,14 @@ export function Hero(): JSX.Element {
         </p>
         <h1
           id="hero-heading"
-          className="mb-4 text-4xl font-bold tracking-tight text-slate-900 sm:text-5xl lg:text-6xl"
+          className="mb-2 text-4xl font-bold tracking-tight text-slate-900 sm:text-5xl lg:text-6xl"
         >
           {profile.name}
         </h1>
-        <p className="mb-8 max-w-2xl text-lg text-slate-600 sm:text-xl">
+        <h2 className="mb-3 text-xl font-semibold text-blue-600 sm:text-2xl">
+          {t(profile.headlineKey)}
+        </h2>
+        <p className="mb-8 max-w-2xl text-base text-slate-600 sm:text-lg">
           {t(profile.taglineKey)}
         </p>
         <div className="flex flex-wrap gap-3">
