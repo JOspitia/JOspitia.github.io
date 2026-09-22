@@ -15,7 +15,7 @@ export const profile = {
     {
       id: 'github',
       url: 'https://github.com/JOspitia',
-      labelKey: 'languageSwitcher.label',
+      labelKey: 'languageSwitcher.github',
     },
   ],
 } as const;
