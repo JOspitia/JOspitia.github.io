@@ -35,6 +35,9 @@
   "skills": {
     "title": "Stack tecnológico",
     "subtitle": "Lenguajes, frameworks, bases de datos, QA, cloud y herramientas de IA que utilizo",
+    "topStack": "Stack principal",
+    "secondaryStack": "Stack complementario",
+    "principal": "Principal",
     "categories": {
       "languages": "Lenguajes",
       "frameworks": "Frameworks",
@@ -42,6 +45,12 @@
       "qa": "QA y Testing",
       "cloud": "Cloud y DevOps",
       "ai": "IA y Orquestadores"
+    },
+    "levels": {
+      "expert": "Nivel experto · Dominio total, uso diario, liderazgo técnico",
+      "advanced": "Nivel avanzado · Fluidez y autonomía sólida",
+      "intermediate": "Nivel intermedio · Conocimiento práctico, integración ocasional",
+      "beginner": "Nivel inicial"
     }
   },
   "experience": {

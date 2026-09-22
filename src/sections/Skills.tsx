@@ -33,37 +33,78 @@ function groupByCategory(items: readonly Skill[]): Map<SkillCategory, Skill[]> {
 }
 
 /**
- * Featured skills render with a brand-colored SVG icon and larger
- * typography so recruiters can scan the headline stack at a glance.
- * Non-featured skills keep the standard small-badge treatment.
+ * Maps the 1..5 ordinal `level` to the i18n tier key under
+ * `skills.levels.*`. Values below 3 collapse to `beginner` so the
+ * tooltip is always defined; levels 1 and 2 are intentionally hidden
+ * from the public profile per the user's "few-but-deep" philosophy.
  */
-function SkillPill({ skill }: { skill: Skill }): JSX.Element {
-  if (skill.featured && skill.icon) {
-    const iconName = skill.icon as SkillIconName;
-    return (
-      <span className="inline-flex items-center gap-2 rounded-lg border border-slate-300 bg-white px-3.5 py-2 text-base font-semibold text-slate-900 shadow-sm">
-        <SkillIcon name={iconName} />
-        <span>{skill.name}</span>
-        <span className="text-xs font-normal text-slate-400">L{skill.level}</span>
-      </span>
-    );
-  }
+function levelToTier(level: 1 | 2 | 3 | 4 | 5): 'expert' | 'advanced' | 'intermediate' | 'beginner' {
+  if (level === 5) return 'expert';
+  if (level === 4) return 'advanced';
+  if (level === 3) return 'intermediate';
+  return 'beginner';
+}
+
+/**
+ * Featured skill card — dark surface, brand-colored icon, "Principal"
+ * badge. The level is exposed only on hover via a native `title`
+ * attribute (rendered through i18n) instead of a visible `L{level}`
+ * label, keeping the visual hierarchy clean.
+ */
+function FeaturedSkillCard({
+  skill,
+  iconName,
+}: {
+  skill: Skill;
+  iconName: SkillIconName;
+}): JSX.Element {
+  const { t } = useTranslation();
+  const tooltipText = t(`skills.levels.${levelToTier(skill.level)}`);
   return (
-    <span className="inline-flex items-center gap-1.5 rounded-full border border-slate-200 bg-white px-3 py-1 text-sm text-slate-700">
+    <div
+      title={tooltipText}
+      className="inline-flex flex-col rounded-lg border border-slate-800 bg-slate-900 px-4 py-3 text-white shadow-md transition-transform hover:scale-[1.02]"
+    >
+      <div className="flex items-center gap-2">
+        <SkillIcon name={iconName} />
+        <span className="text-base font-semibold">{skill.name}</span>
+      </div>
+      <span className="mt-1 inline-flex items-center gap-1 self-start rounded-full bg-blue-600/20 px-2 py-0.5 text-xs font-medium text-blue-300">
+        {t('skills.principal')}
+      </span>
+    </div>
+  );
+}
+
+/**
+ * Secondary skill chip — quiet, slate-tinted, no visible level label.
+ * Level stays available on hover via the native tooltip so the chip
+ * stays visually unobtrusive while preserving access to the detail.
+ */
+function SecondarySkillChip({ skill }: { skill: Skill }): JSX.Element {
+  const { t } = useTranslation();
+  const tooltipText = t(`skills.levels.${levelToTier(skill.level)}`);
+  return (
+    <span
+      title={tooltipText}
+      className="inline-flex items-center rounded-full bg-slate-100 px-2.5 py-0.5 text-xs text-slate-500 opacity-80 transition-opacity hover:opacity-100"
+    >
       {skill.name}
-      <span className="text-xs text-slate-400">L{skill.level}</span>
     </span>
   );
 }
 
 /**
  * Skills section — categories rendered in a stable order; each category
- * lists its skills as inline pills. Skill names stay untranslated
- * (design #168 decision #4); category labels come from i18n.
+ * shows a "Top stack" block with featured cards above and a "Secondary
+ * stack" block with quiet chips below. Skill names stay untranslated
+ * (design #168 decision #4); category labels, the stack subtitles and
+ * the level tooltips come from i18n.
  *
- * Featured skills bubble to the top of each category so the visual
- * hierarchy matches the data: Spring/Node/React/Playwright/PostgreSQL/
- * Docker first, then the supporting stack.
+ * The featured/secondary split matches the user's "few-but-deep"
+ * framing: recruiters see the headline stack immediately, and the
+ * supporting tools stay one glance below without competing for
+ * attention.
  */
 export function Skills(): JSX.Element {
   const { t } = useTranslation();
@@ -80,24 +121,48 @@ export function Skills(): JSX.Element {
         <div className="grid grid-cols-1 gap-8 md:grid-cols-2 lg:grid-cols-3">
           {CATEGORY_ORDER.map((cat) => {
             const items = grouped.get(cat) ?? [];
-            // Featured skills float to the top of their category.
-            const sorted = [...items].sort((a, b) => {
-              if (a.featured && !b.featured) return -1;
-              if (!a.featured && b.featured) return 1;
-              return 0;
-            });
+            const featured = items.filter((s) => s.featured);
+            const secondary = items.filter((s) => !s.featured);
+
             return (
               <div key={cat}>
                 <h3 className="mb-3 text-sm font-semibold uppercase tracking-wider text-slate-500">
                   {t(`skills.categories.${cat}`)}
                 </h3>
-                <ul className="flex flex-wrap gap-2">
-                  {sorted.map((skill) => (
-                    <li key={skill.id}>
-                      <SkillPill skill={skill} />
-                    </li>
-                  ))}
-                </ul>
+
+                {featured.length > 0 && (
+                  <div className="mb-3">
+                    <p className="mb-2 text-xs font-medium uppercase tracking-wide text-slate-400">
+                      {t('skills.topStack')}
+                    </p>
+                    <div className="flex flex-wrap gap-2">
+                      {featured.map((skill) => (
+                        <FeaturedSkillCard
+                          key={skill.id}
+                          skill={skill}
+                          iconName={skill.icon as SkillIconName}
+                        />
+                      ))}
+                    </div>
+                  </div>
+                )}
+
+                {secondary.length > 0 && (
+                  <div>
+                    {featured.length > 0 && (
+                      <p className="mb-2 text-xs font-medium uppercase tracking-wide text-slate-400">
+                        {t('skills.secondaryStack')}
+                      </p>
+                    )}
+                    <ul className="flex flex-wrap gap-1.5">
+                      {secondary.map((skill) => (
+                        <li key={skill.id}>
+                          <SecondarySkillChip skill={skill} />
+                        </li>
+                      ))}
+                    </ul>
+                  </div>
+                )}
               </div>
             );
           })}
