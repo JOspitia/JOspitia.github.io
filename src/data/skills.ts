@@ -13,6 +13,12 @@ import type { Skill } from '../types/skill';
  * `ME.md`: 6 categories (languages, frameworks, databases, qa, cloud,
  * ai) with 32 skills. Levels reflect working confidence (1=exposure,
  * 5=expert).
+ *
+ * PR 8a update: marks six skills as `featured: true` so the Skills
+ * section renders them with an inline SVG icon and larger typography
+ * (Spring Boot, Node.js, React, Playwright, PostgreSQL, Docker). The
+ * rest stay as standard small badges. Head hunters see fewer-but-
+ * deeper skills rather than many shallow ones.
  */
 export const skills: readonly Skill[] = [
   // Languages
@@ -23,29 +29,29 @@ export const skills: readonly Skill[] = [
   { id: 'py', name: 'Python', category: 'languages', level: 3 },
 
   // Frameworks (backend + frontend)
-  { id: 'spring', name: 'Spring Boot', category: 'frameworks', level: 5 },
-  { id: 'node', name: 'Node.js', category: 'frameworks', level: 4 },
+  { id: 'spring', name: 'Spring Boot', category: 'frameworks', level: 5, featured: true, icon: 'spring' },
+  { id: 'node', name: 'Node.js', category: 'frameworks', level: 4, featured: true, icon: 'node' },
   { id: 'express', name: 'Express', category: 'frameworks', level: 4 },
   { id: 'fastapi', name: 'FastAPI', category: 'frameworks', level: 3 },
   { id: 'laravel', name: 'Laravel', category: 'frameworks', level: 4 },
-  { id: 'react', name: 'React', category: 'frameworks', level: 5 },
+  { id: 'react', name: 'React', category: 'frameworks', level: 5, featured: true, icon: 'react' },
   { id: 'angular', name: 'Angular', category: 'frameworks', level: 4 },
   { id: 'tailwind', name: 'Tailwind CSS', category: 'frameworks', level: 5 },
 
   // Databases
-  { id: 'postgres', name: 'PostgreSQL', category: 'databases', level: 4 },
+  { id: 'postgres', name: 'PostgreSQL', category: 'databases', level: 4, featured: true, icon: 'postgresql' },
   { id: 'mysql', name: 'MySQL', category: 'databases', level: 4 },
   { id: 'oracle', name: 'Oracle', category: 'databases', level: 3 },
   { id: 'mssql', name: 'SQL Server', category: 'databases', level: 3 },
 
   // QA & Testing
-  { id: 'playwright', name: 'Playwright', category: 'qa', level: 5 },
+  { id: 'playwright', name: 'Playwright', category: 'qa', level: 5, featured: true, icon: 'playwright' },
   { id: 'cypress', name: 'Cypress', category: 'qa', level: 5 },
   { id: 'selenium', name: 'Selenium', category: 'qa', level: 3 },
   { id: 'postman', name: 'Postman', category: 'qa', level: 4 },
 
   // Cloud & DevOps
-  { id: 'docker', name: 'Docker', category: 'cloud', level: 4 },
+  { id: 'docker', name: 'Docker', category: 'cloud', level: 4, featured: true, icon: 'docker' },
   { id: 'aws-s3', name: 'AWS S3', category: 'cloud', level: 3 },
   { id: 'aws-lambda', name: 'AWS Lambda', category: 'cloud', level: 3 },
   { id: 'ci-cd', name: 'CI/CD', category: 'cloud', level: 4 },

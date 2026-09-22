@@ -48,17 +48,17 @@
     "title": "Work experience",
     "subtitle": "4+ years across the full software lifecycle",
     "blueData": {
-      "title": "IT & QA Automation Engineer / Developer",
+      "title": "QA Automation / Consultant",
       "period": "Feb 2024 – Sep 2026",
       "sector": "Healthcare Sector",
       "location": "Cali, Colombia",
       "highlights": [
-        "Designed architecture and implemented Full-Stack components for critical healthcare platforms (billing, admissions, clinical records).",
-        "Coordinated QA team strategy under Scrum, designing E2E and REST API automation frameworks with Cypress and Playwright.",
-        "Integrated AI tools (Copilot, Gemini) for test case generation, achieving 90% coverage and a 30% reduction in production defects.",
-        "Validated API contracts and data synchronization with external Ministry of Health services."
+        "Led the quality strategy under Scrum methodology, designing and executing functional, smoke, and regression tests to ensure stability of critical healthcare modules (admissions, billing, and dispensation).",
+        "Designed and implemented E2E and REST API automation frameworks (Cypress, Playwright, Postman) for critical flows, reducing manual regression validation time by 50%.",
+        "Integrated AI tools (Copilot, Gemini) into QA pipelines for agile test case generation, achieving a 30% reduction in production defects.",
+        "Performed API contract validations and relational database queries (SQL), complementing the manual testing cycle and ensuring medical data integrity."
       ],
-      "stack": "Stack: PHP 8, PostgreSQL, React, WebSockets, Docker, Cypress, Playwright, Postman, CI/CD."
+      "stack": "QA Stack: Functional/Manual Testing, Cypress, Playwright, Postman, SQL, Scrum, CI/CD, AI Testing."
     },
     "proing": {
       "title": "Software Analyst & Developer",
