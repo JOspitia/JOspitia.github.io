@@ -32,6 +32,13 @@ export const profile = {
       labelKey: 'socials.linkedin',
     },
     {
+      id: 'whatsapp',
+      // WhatsApp link with prefilled message. Country code 57 (Colombia),
+      // number without spaces or symbols. Message URL-encoded.
+      url: 'https://wa.me/573223595445?text=Hola%20Johan%2C%20te%20contacto%20desde%20tu%20portafolio.',
+      labelKey: 'socials.whatsapp',
+    },
+    {
       id: 'email',
       url: 'mailto:jjohanospitia@gmail.com',
       labelKey: 'socials.email',
