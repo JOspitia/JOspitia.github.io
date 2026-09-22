@@ -11,7 +11,7 @@ concurrency:
   group: pages
   cancel-in-progress: false
 
-# Required permissions for actions/deploy-pages@v2
+# Required permissions for actions/deploy-pages@v4
 permissions:
   contents: read
   pages: write
@@ -40,7 +40,7 @@ jobs:
         run: npm run build
 
       - name: Upload artifact
-        uses: actions/upload-pages-artifact@v2
+        uses: actions/upload-pages-artifact@v3
         with:
           path: dist
 
@@ -53,4 +53,4 @@ jobs:
     steps:
       - name: Deploy to GitHub Pages
         id: deployment
-        uses: actions/deploy-pages@v2
+        uses: actions/deploy-pages@v4
