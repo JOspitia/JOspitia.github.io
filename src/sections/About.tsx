@@ -2,7 +2,6 @@ import type { JSX } from 'react';
 import { useTranslation } from 'react-i18next';
 import { Container } from '../components/Container';
 import { SectionHeading } from '../components/SectionHeading';
-import { profile } from '../data/profile';
 
 type Highlight = {
   valueKey: string;
@@ -25,11 +24,11 @@ const HIGHLIGHTS: readonly Highlight[] = [
 ];
 
 /**
- * About section — photo on the left (mobile: stacks above), then three
- * prose blocks (lead summary / full bio / AI-enhanced workflow), then four
- * highlight tiles. Photo URL comes from `profile.photoUrl` and the
- * accessible name from `t('about.photoAlt')`. Pure presentational; consumes
- * i18n via useTranslation and the SectionHeading primitive.
+ * About section — three prose blocks (lead summary via SectionHeading,
+ * then full bio, then AI-enhanced workflow) followed by four highlight
+ * tiles. The profile photo used to live here but was moved to the Hero
+ * section in PR 13 so the avatar appears exactly once on the page,
+ * above the fold, next to the name.
  */
 export function About(): JSX.Element {
   const { t } = useTranslation();
@@ -40,25 +39,13 @@ export function About(): JSX.Element {
       className="bg-white px-4 py-20 sm:px-6 lg:px-8"
     >
       <Container>
-        <div className="flex flex-col items-start gap-8 sm:flex-row sm:items-center">
-          <img
-            src={profile.photoUrl}
-            alt={t('about.photoAlt')}
-            width={144}
-            height={144}
-            loading="lazy"
-            className="h-36 w-36 flex-shrink-0 rounded-full border-4 border-white object-cover shadow-md"
-          />
-          <div className="flex-1">
-            <SectionHeading titleKey="about.title" subtitleKey="about.lead" />
-            <p className="mb-4 max-w-3xl text-base leading-relaxed text-slate-700 sm:text-lg">
-              {t('about.body')}
-            </p>
-            <p className="mb-12 max-w-3xl text-base leading-relaxed text-slate-700 sm:text-lg">
-              {t('about.ai')}
-            </p>
-          </div>
-        </div>
+        <SectionHeading titleKey="about.title" subtitleKey="about.lead" />
+        <p className="mb-4 max-w-3xl text-base leading-relaxed text-slate-700 sm:text-lg">
+          {t('about.body')}
+        </p>
+        <p className="mb-12 max-w-3xl text-base leading-relaxed text-slate-700 sm:text-lg">
+          {t('about.ai')}
+        </p>
         <dl className="grid grid-cols-1 gap-6 sm:grid-cols-2 lg:grid-cols-4">
           {HIGHLIGHTS.map((h) => (
             <div
