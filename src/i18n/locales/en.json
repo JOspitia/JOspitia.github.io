@@ -35,9 +35,8 @@
   "skills": {
     "title": "Tech stack",
     "subtitle": "Languages, frameworks, databases, QA, cloud and AI tools I work with",
-    "topStack": "Top stack",
-    "secondaryStack": "Secondary stack",
-    "principal": "Principal",
+    "coreStack": "Core Technologies",
+    "secondaryStack": "Other Technologies",
     "categories": {
       "languages": "Languages",
       "frameworks": "Frameworks",
