@@ -48,17 +48,17 @@
     "title": "Experiencia laboral",
     "subtitle": "Más de 4 años cubriendo el ciclo completo de software",
     "blueData": {
-      "title": "Ingeniero de IT y QA Automation / Desarrollador",
+      "title": "QA Automation / Consultor",
       "period": "Feb 2024 – Sep 2026",
       "sector": "Sector Salud",
       "location": "Cali, Colombia",
       "highlights": [
-        "Diseñé la arquitectura e implementé componentes Full-Stack para plataformas y módulos críticos en el sector salud (facturación, admisiones e historia clínica).",
-        "Coordiné la estrategia de calidad del equipo QA bajo metodología Scrum, diseñando marcos de automatización E2E y de APIs REST con Cypress y Playwright.",
-        "Integré herramientas de IA (Copilot, Gemini) para la generación de casos de prueba, logrando un 90% de cobertura y una reducción del 30% de defectos en producción.",
-        "Realicé validaciones de contratos API y sincronización de datos con servicios externos del Ministerio de Salud."
+        "Lideré la estrategia de calidad bajo metodología Scrum, diseñando y ejecutando pruebas funcionales, de humo (smoke tests) y de regresión para garantizar la estabilidad de módulos críticos de salud (admisiones, facturación y dispensación).",
+        "Diseñé e implementé marcos de automatización E2E y de APIs REST (Cypress, Playwright, Postman) para los flujos críticos, reduciendo los tiempos de validación manual de regresión en un 50%.",
+        "Integré herramientas de IA (Copilot, Gemini) en los pipelines de QA para la generación ágil de casos de prueba, logrando una reducción del 30% de defectos en producción.",
+        "Realicé validaciones de contratos API y consultas en bases de datos relacionales (SQL), complementando el ciclo de pruebas manuales y garantizando la integridad de los datos médicos."
       ],
-      "stack": "Stack: PHP 8, PostgreSQL, React, WebSockets, Docker, Cypress, Playwright, Postman, CI/CD."
+      "stack": "Stack QA: Pruebas Funcionales/Manuales, Cypress, Playwright, Postman, SQL, Scrum, CI/CD, IA Testing."
     },
     "proing": {
       "title": "Analista y Desarrollador de TIC",
