@@ -1,0 +1,74 @@
+{
+  "nav": {
+    "about": "About",
+    "skills": "Skills",
+    "projects": "Projects",
+    "contact": "Contact",
+    "skipToContent": "Skip to content"
+  },
+  "hero": {
+    "greeting": "Hi, I'm",
+    "name": "Johan Ospitia",
+    "tagline": "Full-Stack Developer",
+    "ctaPrimary": "View projects",
+    "ctaSecondary": "Get in touch"
+  },
+  "about": {
+    "title": "About me",
+    "lead": "I build accessible, performant web products end-to-end.",
+    "body": "Placeholder bio. Edit src/i18n/locales/en.json#about.body to replace this with your real story.",
+    "highlights": {
+      "years": "5+ years",
+      "yearsLabel": "of professional experience",
+      "projects": "20+ shipped",
+      "projectsLabel": "production projects",
+      "stack": "TS-first",
+      "stackLabel": "TypeScript-first workflow"
+    }
+  },
+  "skills": {
+    "title": "Skills",
+    "subtitle": "Tools and technologies I work with",
+    "categories": {
+      "languages": "Languages",
+      "frameworks": "Frameworks",
+      "tools": "Tools",
+      "cloud": "Cloud & DevOps"
+    }
+  },
+  "projects": {
+    "title": "Featured projects",
+    "subtitle": "Selected work — see more on GitHub",
+    "viewRepo": "View repo",
+    "viewLive": "View live",
+    "items": {
+      "weatherApp": {
+        "title": "Weather dashboard",
+        "description": "Responsive weather dashboard with geolocation, caching, and offline support."
+      },
+      "taskApi": {
+        "title": "Task management API",
+        "description": "REST API with JWT auth, role-based access, and OpenAPI documentation."
+      },
+      "notesApp": {
+        "title": "Markdown notes app",
+        "description": "Local-first notes with rich text, tags, and full-text search."
+      }
+    }
+  },
+  "contact": {
+    "title": "Get in touch",
+    "subtitle": "Open to interesting projects and conversations.",
+    "cta": "Reach out"
+  },
+  "footer": {
+    "builtWith": "Built with React, TypeScript, and Tailwind",
+    "deployedOn": "Deployed on GitHub Pages",
+    "copyright": "© {{year}} Johan Ospitia. All rights reserved."
+  },
+  "languageSwitcher": {
+    "label": "Language",
+    "es": "Español",
+    "en": "English"
+  }
+}
