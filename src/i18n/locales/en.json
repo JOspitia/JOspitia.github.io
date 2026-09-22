@@ -2,6 +2,7 @@
   "nav": {
     "about": "About",
     "skills": "Skills",
+    "experience": "Experience",
     "projects": "Projects",
     "contact": "Contact",
     "skipToContent": "Skip to content"
@@ -9,31 +10,69 @@
   "hero": {
     "greeting": "Hi, I'm",
     "name": "Johan Ospitia",
-    "tagline": "Full-Stack Developer",
+    "headline": "Full-Stack Developer & QA Automation Lead",
+    "tagline": "Cali, Colombia · Open to remote work",
     "ctaPrimary": "View projects",
     "ctaSecondary": "Get in touch"
   },
   "about": {
     "title": "About me",
-    "lead": "I build accessible, performant web products end-to-end.",
-    "body": "Placeholder bio. Edit src/i18n/locales/en.json#about.body to replace this with your real story.",
+    "lead": "Computer Engineer with 4+ years of experience as a Full-Stack Developer, fluent in Java, Spring Boot, Node.js, PHP, React, and Angular.",
+    "body": "I've actively participated in the complete software lifecycle: from requirements gathering and user story generation to initial architecture, Full-Stack development, and production deployment. Additionally, I've led quality strategies ensuring system stability through advanced automation with Playwright and Cypress.",
+    "ai": "I enhance every stage of the development cycle with AI in a concrete and measurable way: I use orchestrators like Gentle-AI, Kimi K2 and DeepSeek for phase-based project planning and technical requirements structuring; Open Code + MiniMax to validate user stories against implemented code, reducing defects before production; and models like Gemini and Claude (via Antigravity) to accelerate code writing and automated E2E test suite generation with Playwright within CI/CD pipelines under Scrum. Currently completing a Master's in IT Management at UNIR (Spain).",
+    "photoAlt": "Portrait of Johan Ospitia",
     "highlights": {
-      "years": "5+ years",
-      "yearsLabel": "of professional experience",
-      "projects": "20+ shipped",
-      "projectsLabel": "production projects",
-      "stack": "TS-first",
-      "stackLabel": "TypeScript-first workflow"
+      "years": "4+ years",
+      "yearsLabel": "across the full software lifecycle",
+      "delivery": "40% reduction",
+      "deliveryLabel": "in delivery times via AI orchestration",
+      "defects": "30% reduction",
+      "defectsLabel": "in production defects via AI validation + automation",
+      "coverage": "90% coverage",
+      "coverageLabel": "automated E2E in healthcare modules"
     }
   },
   "skills": {
-    "title": "Skills",
-    "subtitle": "Tools and technologies I work with",
+    "title": "Tech stack",
+    "subtitle": "Languages, frameworks, databases, QA, cloud and AI tools I work with",
     "categories": {
       "languages": "Languages",
       "frameworks": "Frameworks",
-      "tools": "Tools",
-      "cloud": "Cloud & DevOps"
+      "databases": "Databases",
+      "qa": "QA & Testing",
+      "cloud": "Cloud & DevOps",
+      "ai": "AI & Orchestrators"
+    }
+  },
+  "experience": {
+    "title": "Work experience",
+    "subtitle": "4+ years across the full software lifecycle",
+    "blueData": {
+      "title": "IT & QA Automation Engineer / Developer",
+      "period": "Feb 2024 – Sep 2026",
+      "sector": "Healthcare Sector",
+      "location": "Cali, Colombia",
+      "highlights": [
+        "Designed architecture and implemented Full-Stack components for critical healthcare platforms (billing, admissions, clinical records).",
+        "Coordinated QA team strategy under Scrum, designing E2E and REST API automation frameworks with Cypress and Playwright.",
+        "Integrated AI tools (Copilot, Gemini) for test case generation, achieving 90% coverage and a 30% reduction in production defects.",
+        "Validated API contracts and data synchronization with external Ministry of Health services."
+      ],
+      "stack": "Stack: PHP 8, PostgreSQL, React, WebSockets, Docker, Cypress, Playwright, Postman, CI/CD."
+    },
+    "proing": {
+      "title": "Software Analyst & Developer",
+      "period": "Feb 2022 – Nov 2023",
+      "sector": "Engineering & Services",
+      "location": "Cali, Colombia",
+      "highlights": [
+        "Developed and maintained web applications and RESTful services in Java (Spring Boot), PHP, and microservices architectures, plus native Android mobile apps.",
+        "Managed and optimized databases in Oracle, PostgreSQL, and MySQL, improving complex SQL query performance.",
+        "Designed and executed unit, integration, and REST API contract validation tests.",
+        "Provided cross-functional support actively participating in technical screening, evaluation, and recruitment processes for IT personnel.",
+        "Participated across the full SDLC: requirements, user stories, development, and infrastructure integration under Scrum."
+      ],
+      "stack": "Stack: Spring Boot (Java), Android (Java), Angular, PHP, MySQL, PostgreSQL, Oracle, Git."
     }
   },
   "projects": {
@@ -42,23 +81,27 @@
     "viewRepo": "View repo",
     "viewLive": "View live",
     "items": {
-      "weatherApp": {
-        "title": "Weather dashboard",
-        "description": "Responsive weather dashboard with geolocation, caching, and offline support."
+      "resumeTailor": {
+        "title": "Resume Tailor AI v2.5",
+        "description": "Full-Stack AI platform to audit and tailor CVs to job postings via LLM chain orchestration and ATS analysis. Fast vectorial PDF generation with Typst and real-time SSE processing."
       },
-      "taskApi": {
-        "title": "Task management API",
-        "description": "REST API with JWT auth, role-based access, and OpenAPI documentation."
+      "hrTech": {
+        "title": "HR-Tech SaaS Platform",
+        "description": "Enterprise Multi-Tenant SaaS for HR and payroll management. Includes logical data isolation per company (RBAC/JWT) at SQL level and secure cloud storage."
       },
-      "notesApp": {
-        "title": "Markdown notes app",
-        "description": "Local-first notes with rich text, tags, and full-text search."
+      "fixlat": {
+        "title": "Notes & Metrics Serverless Dashboard",
+        "description": "Full-Stack web app for drag-and-drop task management with decoupled serverless architecture to optimize infrastructure costs processing metrics in background."
+      },
+      "inventarios": {
+        "title": "Inventory & IoT Monitoring",
+        "description": "Inventory and lot traceability management system. Includes warehouse control, reports, and real-time environmental monitoring integrated with IoT sensors."
       }
     }
   },
   "contact": {
     "title": "Get in touch",
-    "subtitle": "Open to interesting projects and conversations.",
+    "subtitle": "Open to projects, professional proposals, and technical collaborations.",
     "cta": "Reach out"
   },
   "footer": {
@@ -71,5 +114,10 @@
     "es": "Español",
     "en": "English",
     "github": "GitHub"
+  },
+  "socials": {
+    "github": "GitHub",
+    "linkedin": "LinkedIn",
+    "email": "Email"
   }
 }
