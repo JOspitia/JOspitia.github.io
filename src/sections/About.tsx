@@ -40,10 +40,10 @@ export function About(): JSX.Element {
     >
       <Container>
         <SectionHeading titleKey="about.title" subtitleKey="about.lead" />
-        <p className="mb-4 max-w-3xl text-base leading-relaxed text-slate-700 sm:text-lg">
+        <p className="mb-4 text-base leading-relaxed text-slate-700 sm:text-lg">
           {t('about.body')}
         </p>
-        <p className="mb-12 max-w-3xl text-base leading-relaxed text-slate-700 sm:text-lg">
+        <p className="mb-12 text-base leading-relaxed text-slate-700 sm:text-lg">
           {t('about.ai')}
         </p>
         <dl className="grid grid-cols-1 gap-6 sm:grid-cols-2 lg:grid-cols-4">
