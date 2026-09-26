@@ -1,10 +1,10 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<!-- Single-page portfolio: one entry pointing to the site root. lastmod reflects
-     the deploy of PR 13 (SEO tech) — bump manually when content changes. -->
+<!-- Single-page portfolio: one entry pointing to the site root. Bump en cada
+     cambio SEO/índice para señalar a los crawlers que vuelvan a leer. -->
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   <url>
     <loc>https://jospitia.github.io/</loc>
-    <lastmod>2026-09-22</lastmod>
+    <lastmod>2026-09-25</lastmod>
     <changefreq>monthly</changefreq>
     <priority>1.0</priority>
   </url>
