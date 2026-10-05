@@ -3,6 +3,7 @@ import { useTranslation } from 'react-i18next';
 import { profile } from '../data/profile';
 import { Button } from '../components/Button';
 import { Container } from '../components/Container';
+import { CvActions } from '../components/CvActions';
 
 /**
  * Hero section — first viewport, bilingual greeting + name (the only
@@ -72,6 +73,9 @@ export function Hero(): JSX.Element {
               <a href="#contact" onClick={handleScrollTo('contact')}>
                 <Button variant="secondary" size="lg">{t('hero.ctaSecondary')}</Button>
               </a>
+            </div>
+            <div className="mt-4">
+              <CvActions />
             </div>
           </div>
         </div>
