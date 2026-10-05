@@ -13,7 +13,9 @@
     "headline": "Full-Stack Developer & QA Automation Lead",
     "tagline": "Cali, Colombia · Open to remote work",
     "ctaPrimary": "View projects",
-    "ctaSecondary": "Get in touch"
+    "ctaSecondary": "Get in touch",
+    "cvDownload": "Download CV",
+    "cvView": "View CV"
   },
   "about": {
     "title": "About me",
