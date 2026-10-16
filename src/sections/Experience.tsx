@@ -3,15 +3,18 @@ import { useTranslation } from 'react-i18next';
 import { experience } from '../data/experience';
 import { Container } from '../components/Container';
 import { SectionHeading } from '../components/SectionHeading';
+import { Reveal } from '../components/Reveal';
 
 /**
- * Experience section — chronological list of work engagements. Each
- * item is rendered as a card with header (title + company + period
- * + sector/location) and a bullet list of highlights followed by a
- * "Stack:" footer line. All copy comes from i18n keys stored on the
- * data record so the same array renders in English or Spanish.
+ * Experience — vertical timeline with monospace dates and sharp
+ * section borders (2026-10 redesign). Each entry is a terminal-card:
  *
- * PR 8a: new section inserted between Skills and Projects.
+ *   2024-02 → 2026-09   ●   Blue Data Service · Healthcare
+ *                       │
+ *                       ├── QA Automation / Consultant
+ *                       ├── QA stack: Cypress, Playwright, Postman, SQL
+ *                       ├── ↳ 30% production defect reduction
+ *                       └── ↳ 90% automated E2E coverage
  */
 export function Experience(): JSX.Element {
   const { t } = useTranslation();
@@ -19,36 +22,44 @@ export function Experience(): JSX.Element {
     <section
       id="experience"
       aria-labelledby="experience-heading"
-      className="bg-white px-4 py-20 sm:px-6 lg:px-8"
+      className="relative border-b border-current/15 bg-[var(--bg-page)] px-4 py-20 sm:px-6 lg:px-8"
     >
       <Container>
-        <SectionHeading titleKey="experience.title" subtitleKey="experience.subtitle" />
-        <ol className="space-y-8">
-          {experience.map((item) => (
+        <SectionHeading titleKey="experience.title" subtitleKey="experience.subtitle" sectionKey="experience" />
+
+        <Reveal as="ol" className="space-y-6">
+          {experience.map((entry) => (
             <li
-              key={item.id}
-              className="rounded-lg border border-slate-200 bg-white p-6 shadow-sm"
+              key={entry.id}
+              className="grid grid-cols-1 gap-4 border border-current/20 bg-[var(--terminal-800)] p-6 md:grid-cols-[180px_1fr]"
             >
-              <header className="mb-4 flex flex-col gap-1 sm:flex-row sm:items-baseline sm:justify-between">
-                <div>
-                  <h3 className="text-xl font-semibold text-slate-900">
-                    {t(item.titleKey)} <span className="text-slate-500">· {item.company}</span>
-                  </h3>
-                  <p className="text-sm text-slate-500">
-                    {t(item.sectorKey)} · {t(item.locationKey)}
-                  </p>
-                </div>
-                <p className="text-sm font-medium text-slate-600">{t(item.periodKey)}</p>
-              </header>
-              <ul className="mb-4 list-disc space-y-2 pl-5 text-sm text-slate-700 sm:text-base">
-                {item.highlights.map((highlightKey) => (
-                  <li key={highlightKey}>{t(highlightKey)}</li>
-                ))}
-              </ul>
-              <p className="text-xs font-medium text-slate-500">{t(item.stackKey)}</p>
+              <div className="font-mono">
+                <p className="text-xs uppercase tracking-wider text-[var(--muted)]">{t(entry.periodKey)}</p>
+                <p className="mt-1 text-sm text-[var(--fg-page)]">{t(entry.locationKey)}</p>
+              </div>
+              <div className="border-t border-current/15 pt-4 md:border-l md:border-t-0 md:pl-6 md:pt-0">
+                <p className="text-lg font-semibold text-[var(--fg-page)]">
+                  <span className="font-mono text-sm text-[var(--accent)]">●</span>{' '}
+                  {t(entry.titleKey)} · <span className="text-[var(--muted)]">{entry.company}</span>
+                </p>
+                <p className="mt-1 text-xs uppercase tracking-wider text-[var(--muted)]">
+                  {t(entry.sectorKey)}
+                </p>
+                <ul className="mt-3 space-y-1 text-sm text-[var(--fg-page)]">
+                  {entry.highlights.map((highlightKey) => (
+                    <li key={highlightKey} className="flex gap-2">
+                      <span className="text-[var(--accent)]">↳</span>
+                      <span>{t(highlightKey)}</span>
+                    </li>
+                  ))}
+                </ul>
+                <p className="mt-3 font-mono text-xs text-[var(--muted)]">
+                  {t(entry.stackKey)}
+                </p>
+              </div>
             </li>
           ))}
-        </ol>
+        </Reveal>
       </Container>
     </section>
   );

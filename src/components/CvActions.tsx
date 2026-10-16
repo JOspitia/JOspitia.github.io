@@ -11,7 +11,7 @@ function DownloadIcon(): JSX.Element {
     <svg
       viewBox="0 0 24 24"
       aria-hidden="true"
-      className="h-4 w-4"
+      className="h-3.5 w-3.5"
       fill="none"
       stroke="currentColor"
       strokeWidth="2"
@@ -30,7 +30,7 @@ function ExternalLinkIcon(): JSX.Element {
     <svg
       viewBox="0 0 24 24"
       aria-hidden="true"
-      className="h-4 w-4"
+      className="h-3.5 w-3.5"
       fill="none"
       stroke="currentColor"
       strokeWidth="2"
@@ -45,22 +45,26 @@ function ExternalLinkIcon(): JSX.Element {
 }
 
 /**
- * CV action buttons — download or view PDF in browser.
- * Automatically selects the correct CV file based on the current language.
+ * CV action buttons — sharp mono styling, hover inverts to bg-page.
+ * Picks the right CV based on the current language.
  */
 export function CvActions(): JSX.Element {
   const { t, i18n } = useTranslation();
   const lang = (i18n.resolvedLanguage ?? 'en') as keyof typeof CV_FILES;
   const cvFile = CV_FILES[lang] ?? CV_FILES.en;
 
+  const btnClass =
+    'invert-on-hover inline-flex items-center gap-2 border border-current/40 px-3 py-2 font-mono text-xs uppercase tracking-wider';
+
   return (
-    <div className="flex flex-wrap gap-3">
+    <div className="flex flex-wrap gap-2">
       <a
         href={cvFile}
         download
         target="_blank"
         rel="noopener noreferrer"
-        className="inline-flex items-center gap-2 rounded border border-slate-700 px-4 py-2 text-sm font-medium text-ink transition-colors hover:bg-slate-100 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-slate-500"
+        data-cursor-hover
+        className={btnClass}
       >
         <DownloadIcon />
         {t('hero.cvDownload')}
@@ -69,7 +73,8 @@ export function CvActions(): JSX.Element {
         href={cvFile}
         target="_blank"
         rel="noopener noreferrer"
-        className="inline-flex items-center gap-2 rounded border border-slate-700 px-4 py-2 text-sm font-medium text-ink transition-colors hover:bg-slate-100 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-slate-500"
+        data-cursor-hover
+        className={btnClass}
       >
         <ExternalLinkIcon />
         {t('hero.cvView')}

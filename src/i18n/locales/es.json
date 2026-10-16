@@ -39,6 +39,8 @@
     "subtitle": "Lenguajes, frameworks, bases de datos, QA, cloud y herramientas de IA que utilizo",
     "coreStack": "Stack principal",
     "secondaryStack": "Otras tecnologías",
+    "treePrompt": "$ tree ~/stack",
+    "summary": "{categories} categorías · {count} tecnologías · 1 filosofía",
     "categories": {
       "languages": "Lenguajes",
       "frameworks": "Frameworks",
@@ -160,6 +162,27 @@
     "builtWith": "Construido con React, TypeScript y Tailwind",
     "deployedOn": "Desplegado en GitHub Pages",
     "copyright": "© {{year}} Johan Ospitia. Todos los derechos reservados."
+  },
+  "status": {
+    "available": "Disponible para trabajo remoto",
+    "themeToggle": "Cambiar a modo {{target}}",
+    "dark": "Oscuro",
+    "light": "Claro"
+  },
+  "ui": {
+    "sectionMarker": {
+      "hero": "01",
+      "about": "02",
+      "skills": "03",
+      "experience": "04",
+      "projects": "05",
+      "faq": "06",
+      "contact": "07"
+    },
+    "categoryFile": "categorias",
+    "technologiesFile": "tecnologias",
+    "philosophyFile": "filosofia",
+    "philosophyText": "pocas-pero-profundas"
   },
   "languageSwitcher": {
     "label": "Idioma",

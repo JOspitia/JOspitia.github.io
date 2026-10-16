@@ -2,6 +2,8 @@ import type { JSX } from 'react';
 import { Header } from './components/Header';
 import { SkipLink } from './components/SkipLink';
 import { BackToTop } from './components/BackToTop';
+import { StatusBar } from './components/StatusBar';
+import { CustomCursor } from './components/CustomCursor';
 import { Hero } from './sections/Hero';
 import { About } from './sections/About';
 import { Skills } from './sections/Skills';
@@ -12,26 +14,33 @@ import { Contact } from './sections/Contact';
 import { Footer } from './sections/Footer';
 
 /**
- * Site root composition (WU-9 + PR 8a):
- * - `<SkipLink />` first so keyboard users get it before any other control.
- * - `<Header />` provides sticky nav + LanguageSwitcher + brand mark.
- * - `<main id="main">` is the skip-link target and the ARIA `main` landmark.
- * - Sections render in document order so the IntersectionObserver in
- *   `useActiveSection` tracks scroll progress naturally.
- *   PR 8a adds `<Experience />` between Skills and Projects.
- * - `<FAQ />` sits between Projects and Contact so the Q/A addresses
- *   remaining objections right before the final conversion CTA, and so
- *   the visible content matches the JSON-LD FAQPage in index.html.
- * - `<Footer />` is outside `<main>` (it's a `contentinfo` landmark, not
- *   primary content).
- * - `<BackToTop />` floats over everything once the user has scrolled.
+ * Site root composition (2026-10 redesign):
+ *
+ *   <StatusBar />      ← sticky top-0 (height 34px)
+ *   <Header />         ← sticky top-[34px] (height 56px), monospace nav
+ *   <main>
+ *     <Hero />         ← terminal-card with typewriter
+ *     <About />        ← bento grid
+ *     <Skills />       ← ASCII tree view
+ *     <Experience />   ← vertical timeline
+ *     <Projects />     ← magnetic + invert cards
+ *     <FAQ />          ← + / − accordion
+ *     <Contact />      ← terminal prompt
+ *   </main>
+ *   <Footer />         ← status line
+ *   <BackToTop />      ← floating
+ *
+ * The <SkipLink /> sits first in tab order but renders visually
+ * hidden; <CustomCursor /> mounts globally and is a no-op on touch.
  */
 function App(): JSX.Element {
   return (
     <>
       <SkipLink />
+      <StatusBar />
+      <CustomCursor />
       <Header />
-      <main id="main" role="main">
+      <main id="main" role="main" className="pt-[64px]">
         <Hero />
         <About />
         <Skills />

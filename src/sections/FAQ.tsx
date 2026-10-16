@@ -1,65 +1,69 @@
-import type { JSX } from 'react';
+import { useState, type JSX } from 'react';
 import { useTranslation } from 'react-i18next';
 import { Container } from '../components/Container';
 import { SectionHeading } from '../components/SectionHeading';
+import { Reveal } from '../components/Reveal';
 
 /**
- * Stable ordering of FAQ keys — drives both the render order and the
- * Q/A schema index. Keeping the list as a closed tuple (read from
- * `t('faq.items.<id>.question')` / `.answer`) means adding a new entry
- * here requires no other code changes; the JSON-LD FAQPage block in
- * `index.html` is the only place that needs a parallel update.
+ * FAQ — accordion using `+` / `-` chars as the disclosure indicator
+ * (no SVG icons, no rounded buttons). Each Q/A pair is a sharp
+ * terminal panel that "opens" with a left accent bar.
  */
 const FAQ_KEYS = ['who', 'stack', 'location', 'qa', 'ai', 'projects', 'contact'] as const;
 type FaqKey = (typeof FAQ_KEYS)[number];
 
-/**
- * FAQ section — Q&A pairs rendered as a definition list (`<dl>` / `<dt>`
- * / `<dd>`) so screen readers announce each question–answer pair with
- * the right semantic relationship. Mirrors the JSON-LD FAQPage block in
- * `index.html`; the two must stay byte-identical on the answer text to
- * avoid the schema/visible-content drift that Google penalizes.
- *
- * Placement is between <Projects /> and <Contact /> so the FAQ
- * answers "who/what/where/availability" objections right before the
- * final conversion CTA — the canonical landing-page conversion flow.
- *
- * The `<details>`/`<summary>` accordion is opt-in per item: it stays
- * closed by default so the page does not look like a giant wall of
- * text in the initial paint, and crawlers (which don't always expand
- * `<details>`) still see the full answer in the HTML source.
- */
 export function FAQ(): JSX.Element {
   const { t } = useTranslation();
+  const [open, setOpen] = useState<FaqKey | null>('who');
 
   return (
     <section
       id="faq"
       aria-labelledby="faq-heading"
-      className="bg-white px-4 py-20 sm:px-6 lg:px-8"
+      className="relative border-b border-current/15 bg-[var(--bg-page)] px-4 py-20 sm:px-6 lg:px-8"
     >
       <Container>
-        <SectionHeading titleKey="faq.title" subtitleKey="faq.subtitle" />
+        <SectionHeading titleKey="faq.title" subtitleKey="faq.subtitle" sectionKey="faq" />
 
-        <dl className="grid grid-cols-1 gap-4 md:grid-cols-2">
-          {FAQ_KEYS.map((id: FaqKey) => {
+        <Reveal as="ul" className="grid grid-cols-1 gap-3">
+          {FAQ_KEYS.map((id) => {
             const question = t(`faq.items.${id}.question`);
             const answer = t(`faq.items.${id}.answer`);
+            const isOpen = open === id;
             return (
-              <div
+              <li
                 key={id}
-                className="rounded-lg border border-slate-200 bg-slate-50 p-5"
+                className={`border bg-[var(--terminal-800)] transition-colors ${
+                  isOpen ? 'border-[var(--accent)]' : 'border-current/20'
+                }`}
               >
-                <dt className="mb-2 text-base font-semibold text-slate-900">
-                  {question}
-                </dt>
-                <dd className="text-sm leading-relaxed text-slate-700">
-                  {answer}
-                </dd>
-              </div>
+                <button
+                  type="button"
+                  onClick={() => setOpen(isOpen ? null : id)}
+                  aria-expanded={isOpen}
+                  aria-controls={`faq-${id}`}
+                  data-cursor-hover
+                  className="flex w-full items-start justify-between gap-4 px-5 py-4 text-left"
+                >
+                  <span className="font-mono text-sm font-semibold text-[var(--fg-page)]">
+                    <span className="mr-3 inline-block w-6 text-[var(--accent)]">
+                      {isOpen ? '−' : '+'}
+                    </span>
+                    {question}
+                  </span>
+                  <span className="font-mono text-xs uppercase tracking-wider text-[var(--muted)]">
+                    {id}
+                  </span>
+                </button>
+                {isOpen && (
+                  <div id={`faq-${id}`} className="border-t border-current/15 px-5 py-4">
+                    <p className="text-sm leading-relaxed text-[var(--fg-page)]">{answer}</p>
+                  </div>
+                )}
+              </li>
             );
           })}
-        </dl>
+        </Reveal>
       </Container>
     </section>
   );

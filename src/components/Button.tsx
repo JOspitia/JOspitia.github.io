@@ -10,25 +10,23 @@ type ButtonProps = Omit<ButtonHTMLAttributes<HTMLButtonElement>, 'className'> & 
 };
 
 /**
- * Color tokens come from `tailwind.config.js#theme.extend.colors`:
- * only `accent` and `ink` are defined for the placeholder palette, so the
- * presentational primitives use those plus Tailwind's default slate scale
- * for surface/border neutrals. Once the final palette lands (post-PR 4)
- * the variant map below is the single edit point.
+ * Button — sharp corners, mono uppercase tracking on small variants.
+ * Variants map to the dark/light palette via CSS variables so theme
+ * switching is automatic (no Tailwind class swap needed).
  */
 const VARIANT_CLASSES: Record<ButtonVariant, string> = {
   primary:
-    'bg-accent text-white hover:opacity-90 focus-visible:ring-accent disabled:bg-slate-300 disabled:text-slate-500',
+    'bg-[var(--accent)] text-[var(--bg-page)] hover:bg-[var(--fg-page)] hover:text-[var(--bg-page)] focus-visible:ring-[var(--accent)] disabled:opacity-50',
   secondary:
-    'border border-slate-700 text-ink hover:bg-slate-100 focus-visible:ring-slate-500 disabled:border-slate-300 disabled:text-slate-400',
+    'border border-current/40 text-[var(--fg-page)] hover:bg-[var(--fg-page)] hover:text-[var(--bg-page)] focus-visible:ring-current/40',
   ghost:
-    'text-ink hover:bg-slate-100 focus-visible:ring-slate-500 disabled:text-slate-400',
+    'text-[var(--fg-page)] hover:bg-current/5 focus-visible:ring-current/40',
 };
 
 const SIZE_CLASSES: Record<ButtonSize, string> = {
-  sm: 'px-3 py-1.5 text-sm',
-  md: 'px-4 py-2 text-base',
-  lg: 'px-6 py-3 text-lg',
+  sm: 'px-3 py-1.5 text-xs font-mono uppercase tracking-wider',
+  md: 'px-4 py-2 text-sm font-mono uppercase tracking-wider',
+  lg: 'px-6 py-3 text-sm font-mono uppercase tracking-wider',
 };
 
 export function Button({
@@ -42,8 +40,8 @@ export function Button({
     <button
       type={type}
       className={[
-        'inline-flex items-center justify-center rounded font-medium transition-colors',
-        'focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-offset-2',
+        'inline-flex items-center justify-center transition-colors',
+        'focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-offset-2 focus-visible:ring-offset-[var(--bg-page)]',
         'disabled:cursor-not-allowed',
         VARIANT_CLASSES[variant],
         SIZE_CLASSES[size],

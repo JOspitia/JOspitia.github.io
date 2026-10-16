@@ -2,8 +2,173 @@
 @tailwind components;
 @tailwind utilities;
 
-/* REQ-7: smooth anchor scroll for in-page nav. Applied globally so PR 3's
-   header links scroll instead of jumping. */
+/* =====================================================================
+   2026-10 redesign — terminal-meets-web base layer
+   ===================================================================== */
+
+/* Reset prefers-color-scheme because the ThemeToggle component sets
+   `class="dark"` on <html> manually (so the choice persists in
+   localStorage and isn't overwritten by the user's OS preference). */
+:root {
+  color-scheme: dark light;
+  --bg-page: #0a0a0a;
+  --fg-page: #fafafa;
+  --border-color: #262626;
+  --muted: #a3a3a3;
+  --accent: #00ff88;
+}
+
+html:not(.dark) {
+  /* Light mode overrides — same tokens, inverted surfaces */
+  color-scheme: light;
+  --bg-page: #fafafa;
+  --fg-page: #0a0a0a;
+  --border-color: #e5e5e5;
+  --muted: #525252;
+  --accent: #00b85f;  /* dim accent for light surfaces — same hue, less neon */
+}
+
 html {
   scroll-behavior: smooth;
+  background-color: var(--bg-page);
+  color: var(--fg-page);
+  /* Crisp font rendering on dark backgrounds */
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  text-rendering: optimizeLegibility;
+}
+
+body {
+  background-color: var(--bg-page);
+  color: var(--fg-page);
+  font-family: 'Inter', system-ui, sans-serif;
+  font-feature-settings: 'cv11', 'ss01', 'ss03'; /* Inter stylistic sets */
+}
+
+/* Selection in the accent color so it reads as part of the brand */
+::selection {
+  background-color: var(--accent);
+  color: var(--bg-page);
+}
+
+/* Custom scrollbar — narrow, monochrome, no rounded track */
+::-webkit-scrollbar { width: 8px; height: 8px; }
+::-webkit-scrollbar-track { background: transparent; }
+::-webkit-scrollbar-thumb {
+  background: var(--border-color);
+  border-radius: 0;
+}
+::-webkit-scrollbar-thumb:hover { background: var(--muted); }
+
+/* Subtle dotted-grid background for the whole page. Pure CSS,
+   scales infinitely, no asset cost. ~32px cell so it doesn't
+   compete with content density. */
+.bg-dots {
+  background-image: radial-gradient(circle at center, var(--border-color) 1px, transparent 1px);
+  background-size: 32px 32px;
+  background-position: 0 0;
+}
+
+/* Scanline effect used by the Hero (subtle, low alpha so it doesn't
+   ruin readability — more "terminal vibe" than "matrix rain"). */
+.bg-scanlines {
+  background-image: repeating-linear-gradient(
+    0deg,
+    rgba(0, 0, 0, 0) 0px,
+    rgba(0, 0, 0, 0) 2px,
+    rgba(255, 255, 255, 0.025) 3px,
+    rgba(255, 255, 255, 0.025) 3px
+  );
+}
+
+/* Custom cursor — only active when JS marks the body with .cursor-
+   ready (CustomCursor component). Pointer events off so it never
+   blocks real clicks. */
+.cursor-dot,
+.cursor-ring {
+  position: fixed;
+  top: 0;
+  left: 0;
+  pointer-events: none;
+  z-index: 9999;
+  border-radius: 50%;
+  mix-blend-mode: difference; /* inverts over the page automatically */
+  will-change: transform;
+}
+.cursor-dot {
+  width: 6px;
+  height: 6px;
+  background: var(--accent);
+  transform: translate3d(-100px, -100px, 0);
+}
+.cursor-ring {
+  width: 32px;
+  height: 32px;
+  border: 1px solid var(--accent);
+  transform: translate3d(-100px, -100px, 0);
+}
+.cursor-ring.is-hover {
+  transform: translate3d(var(--ring-x, 0), var(--ring-y, 0), 0) scale(1.6);
+}
+
+/* Hide the native cursor on interactive surfaces when the custom
+   cursor is mounted. Falls back to native on touch devices via the
+   media query. */
+.cursor-ready,
+.cursor-ready a,
+.cursor-ready button,
+.cursor-ready [role="button"] {
+  cursor: none;
+}
+@media (hover: none) {
+  .cursor-dot, .cursor-ring { display: none; }
+  .cursor-ready, .cursor-ready a, .cursor-ready button { cursor: auto; }
+}
+
+/* Terminal-style blinking caret. One keyframe, two states. */
+@keyframes caretBlink { 50% { opacity: 0; } }
+.caret {
+  display: inline-block;
+  width: 0.55em;
+  height: 1em;
+  background: var(--accent);
+  vertical-align: text-bottom;
+  margin-left: 0.1em;
+  animation: caretBlink 1s steps(1) infinite;
+}
+
+/* Type-once helper for the Hero greeting. JS adds the text content
+   character-by-character and we trigger the cursor caret after. */
+.typed-text {
+  font-variant-ligatures: none;
+}
+
+/* Section-marker "01/", "02/" used at the top of every section. */
+.section-marker {
+  font-family: 'JetBrains Mono', ui-monospace, monospace;
+  font-weight: 500;
+  letter-spacing: 0.02em;
+  color: var(--muted);
+  font-size: 0.75rem;
+  text-transform: uppercase;
+}
+
+/* Heading uses mono */
+h1, h2, h3 {
+  font-family: 'JetBrains Mono', ui-monospace, monospace;
+  letter-spacing: -0.02em;
+}
+
+/* Inverted hover (used by project cards + buttons): when the user
+   hovers, the surface swaps fg/bg with a sharp 150ms transition. */
+.invert-on-hover {
+  transition: background-color 150ms ease-out, color 150ms ease-out, border-color 150ms ease-out;
+}
+.invert-on-hover:hover {
+  background-color: var(--fg-page);
+  color: var(--bg-page);
+  border-color: var(--fg-page);
+}
+.invert-on-hover:hover .invert-target {
+  color: var(--bg-page);
 }
