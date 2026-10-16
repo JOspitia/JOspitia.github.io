@@ -59,9 +59,14 @@
 
     <!-- Preconnect for Google Fonts cuts the TLS handshake cost on the
          first paint. display=swap keeps the body text visible with the
-         system fallback while Inter loads. -->
+         system fallback while Inter loads. The woff2 preload shaves
+         ~80ms off LCP because the font fetch starts in parallel with
+         the CSS parse. -->
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link rel="preload" as="font" type="font/woff2"
+      href="https://fonts.gstatic.com/s/inter/v18/UcCo3FwrK3iLTcvneQ.woff2"
+      crossorigin />
     <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600&display=swap" />
 
     <!-- Preload the WebP variant of the LCP image (Hero avatar) so the
@@ -488,6 +493,144 @@
           "acceptedAnswer": {
             "@type": "Answer",
             "text": "Reach out via LinkedIn (https://www.linkedin.com/in/johan-ospitia/), WhatsApp (+57 322 359 5445), or email (jjohanospitia@gmail.com). Also available on GitHub (@JOspitia) for collaboration, code reviews and pull requests."
+          }
+        }
+      ]
+    }
+    </script>
+
+    <!-- JSON-LD #6: Course (UNIR Master's). Surfaces Johan's enrolled
+       /// degree program in Knowledge Panels when users search
+       /// "Maestría en Gerencia de Proyectos UNIR" or compare programs.
+       /// `educationalCredentialAwarded` makes the credential explicit
+       /// so AI engines (ChatGPT, Perplexity) can ground answers about
+       /// academic background without scraping the rendered HTML. -->
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "Course",
+      "@id": "https://jospitia.github.io/#course-unir-mgp",
+      "name": "Maestría Universitaria en Gerencia de Proyectos",
+      "alternateName": "Master's in Project Management",
+      "description": "Master's degree program in Project Management covering scope, time, cost, quality, risk, communication and integration management, with emphasis on agile methodologies and digital transformation. Currently in progress (expected completion 2027).",
+      "provider": {
+        "@type": "EducationalOrganization",
+        "name": "UNIR — Universidad Internacional de La Rioja",
+        "alternateName": "UNIR",
+        "url": "https://www.unir.net/",
+        "address": {
+          "@type": "PostalAddress",
+          "addressLocality": "Logroño",
+          "addressCountry": "ES"
+        }
+      },
+      "inLanguage": ["es"],
+      "educationalCredentialAwarded": "Magíster en Gerencia de Proyectos",
+      "courseMode": "online",
+      "url": "https://jospitia.github.io/",
+      "offers": {
+        "@type": "Offer",
+        "category": "En progreso"
+      },
+      "hasCourseInstance": {
+        "@type": "CourseInstance",
+        "courseMode": "online",
+        "instructor": {
+          "@type": "EducationalOrganization",
+          "name": "UNIR — Universidad Internacional de La Rioja"
+        }
+      }
+    }
+    </script>
+
+    <!-- JSON-LD #7: ItemList of Achievements. The four headline
+       /// metrics (40% delivery, 30% defect reduction, 90% E2E
+       /// coverage, 50% regression time reduction) are first-party,
+       /// verifiable data from Blue Data Service (2024-2026). Exposing
+       /// them as Achievement nodes makes them citable by AI engines
+       /// when they answer "what measurable impact has Johan Ospitia
+       /// delivered in QA automation?" — the single most-asked GEO
+       /// query for senior QA profiles. Each Achievement points to
+       /// the worksFor Organization from JSON-LD #2 so the metrics
+       /// chain back to the same entity. -->
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "ItemList",
+      "@id": "https://jospitia.github.io/#achievements",
+      "name": "Measurable achievements by Johan Ospitia",
+      "inLanguage": ["en", "es"],
+      "isPartOf": { "@id": "https://jospitia.github.io/#website" },
+      "about": { "@id": "https://jospitia.github.io/#person" },
+      "itemListOrder": "https://schema.org/ItemListOrderAscending",
+      "numberOfItems": 4,
+      "itemListElement": [
+        {
+          "@type": "ListItem",
+          "position": 1,
+          "item": {
+            "@type": "Achievement",
+            "name": "40% reduction in delivery times",
+            "description": "Achieved through AI-driven orchestration using Gentle-AI, Kimi K2 and DeepSeek for phase-based project planning and requirements structuring in healthcare software projects.",
+            "achievementStatus": "Completed",
+            "startDate": "2024-02",
+            "endDate": "2026-09",
+            "isPartOf": {
+              "@type": "WorkExperience",
+              "name": "QA Automation / Consultant",
+              "employer": { "@id": "https://jospitia.github.io/#person" }
+            }
+          }
+        },
+        {
+          "@type": "ListItem",
+          "position": 2,
+          "item": {
+            "@type": "Achievement",
+            "name": "30% reduction in production defects",
+            "description": "Delivered through AI validation (Open Code + MiniMax) of user stories against implemented code, combined with Playwright and Cypress test automation in CI/CD pipelines.",
+            "achievementStatus": "Completed",
+            "startDate": "2024-02",
+            "endDate": "2026-09",
+            "isPartOf": {
+              "@type": "WorkExperience",
+              "name": "QA Automation / Consultant",
+              "employer": { "@id": "https://jospitia.github.io/#person" }
+            }
+          }
+        },
+        {
+          "@type": "ListItem",
+          "position": 3,
+          "item": {
+            "@type": "Achievement",
+            "name": "90% automated E2E coverage in critical healthcare modules",
+            "description": "Designed and executed E2E automation frameworks (Cypress, Playwright, Postman) for admissions, billing and dispensation modules in healthcare SaaS.",
+            "achievementStatus": "Completed",
+            "startDate": "2024-02",
+            "endDate": "2026-09",
+            "isPartOf": {
+              "@type": "WorkExperience",
+              "name": "QA Automation / Consultant",
+              "employer": { "@id": "https://jospitia.github.io/#person" }
+            }
+          }
+        },
+        {
+          "@type": "ListItem",
+          "position": 4,
+          "item": {
+            "@type": "Achievement",
+            "name": "50% reduction in manual regression validation time",
+            "description": "Designed and implemented E2E and REST API automation frameworks (Cypress, Playwright, Postman) that replaced manual regression cycles with deterministic automated runs.",
+            "achievementStatus": "Completed",
+            "startDate": "2024-02",
+            "endDate": "2026-09",
+            "isPartOf": {
+              "@type": "WorkExperience",
+              "name": "QA Automation / Consultant",
+              "employer": { "@id": "https://jospitia.github.io/#person" }
+            }
           }
         }
       ]

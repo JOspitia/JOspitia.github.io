@@ -8,11 +8,16 @@
   rel="alternate"> tags in index.html and are self-referential because
   the SPA serves both ES and EN at the same URL (locale is client-side
   via i18next).
+
+  <image:image> entries surface the avatar (LCP) and the OG image in
+  Google Images / Discover. Caption matches the og:image:alt attribute
+  so the visual SERP preview stays consistent with the social card.
   =========================================================================
 -->
 <urlset
   xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
   xmlns:xhtml="http://www.w3.org/1999/xhtml"
+  xmlns:image="http://www.google.com/schemas/sitemap-image/1.1"
 >
   <url>
     <loc>https://jospitia.github.io/</loc>
@@ -22,5 +27,15 @@
     <xhtml:link rel="alternate" hreflang="en" href="https://jospitia.github.io/" />
     <xhtml:link rel="alternate" hreflang="es" href="https://jospitia.github.io/" />
     <xhtml:link rel="alternate" hreflang="x-default" href="https://jospitia.github.io/" />
+    <image:image>
+      <image:loc>https://jospitia.github.io/foto.jpg</image:loc>
+      <image:caption>Portrait of Johan Ospitia — Full-Stack Developer &amp; QA Automation Engineer based in Cali, Colombia</image:caption>
+      <image:title>Johan Ospitia — Full-Stack &amp; QA Engineer</image:title>
+    </image:image>
+    <image:image>
+      <image:loc>https://jospitia.github.io/og-image.png</image:loc>
+      <image:caption>Johan Ospitia — Full-Stack &amp; QA Automation Engineer / Desarrollador Full-Stack</image:caption>
+      <image:title>Johan Ospitia — Portfolio</image:title>
+    </image:image>
   </url>
 </urlset>
