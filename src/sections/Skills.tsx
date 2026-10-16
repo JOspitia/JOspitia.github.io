@@ -114,7 +114,8 @@ function CategoryTile({
  * Skills section — PR 10 Opción 2 layout.
  *
  * Top block: "Core Stack" with the six featured skills rendered as
- * light-surface cards with brand-colored icons.
+ * light-surface cards with brand-colored icons:
+ *   Spring Boot · Laravel · React · PostgreSQL · Playwright · Docker.
  *
  * Bottom block: "Secondary Stack" with a category-by-category tile
  * grid for every non-featured skill.
@@ -124,6 +125,10 @@ function CategoryTile({
  * visually balanced. Skill names stay untranslated (design #168
  * decision #4); category labels, the stack subtitles and the level
  * tooltips come from i18n.
+ *
+ * 2026-10 update: featured set rotated from Node.js → Laravel to
+ * match the actual project distribution (Laravel is used in 2 of
+ * 6 public projects; Node.js only in Fixlat's AWS Lambda).
  */
 export function Skills(): JSX.Element {
   const { t } = useTranslation();

@@ -12,7 +12,7 @@ import type { SkillIconName } from '../types/skill';
 // which keeps the bundle tree-shakeable per-icon.
 
 import { siSpring } from 'simple-icons';
-import { siNodedotjs } from 'simple-icons';
+import { siLaravel } from 'simple-icons';
 import { siReact } from 'simple-icons';
 import { siPostgresql } from 'simple-icons';
 import { siDocker } from 'simple-icons';
@@ -36,7 +36,7 @@ const PLAYWRIGHT_HEX = '2EAD33';
  */
 const ICON_DATA: Record<SkillIconName, { path: string; hex: string }> = {
   spring: { path: siSpring.path, hex: siSpring.hex },
-  node: { path: siNodedotjs.path, hex: siNodedotjs.hex },
+  laravel: { path: siLaravel.path, hex: siLaravel.hex },
   react: { path: siReact.path, hex: siReact.hex },
   playwright: { path: PLAYWRIGHT_PATH, hex: PLAYWRIGHT_HEX },
   postgresql: { path: siPostgresql.path, hex: siPostgresql.hex },
