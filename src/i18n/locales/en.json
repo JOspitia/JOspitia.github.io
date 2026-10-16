@@ -93,19 +93,27 @@
     "items": {
       "resumeTailor": {
         "title": "Resume Tailor AI v2.5",
-        "description": "Full-Stack AI platform to audit and tailor CVs to job postings via LLM chain orchestration and ATS analysis. Fast vectorial PDF generation with Typst and real-time SSE processing."
+        "description": "Full-Stack AI platform that audits and tailors CVs to job descriptions via a chain of three LLM providers (OpenAI-compatible primary → Gemini cascade fallback). Vector PDF generation with RenderCV+Typst, ATS score auditing, AI-tone detector, iterative YAML editor, and multi-domain profile games (tech / HR / psychology). FastAPI + React 19 + Vite."
       },
       "hrTech": {
         "title": "HR-Tech SaaS Platform",
-        "description": "Enterprise Multi-Tenant SaaS for HR and payroll management. Includes logical data isolation per company (RBAC/JWT) at SQL level and secure cloud storage."
+        "description": "Enterprise Multi-Tenant SaaS for HR and payroll management. Logical data isolation per company (RBAC/JWT) at SQL and storage level, hybrid JWT + HttpOnly Cookie auth, rate limiting with Bucket4j, CSRF protection, file uploads scanned with ClamAV and stored in MinIO via pre-signed URLs. Spring Boot 3.4 + Angular 21 + PostgreSQL 15 + Docker."
       },
       "fixlat": {
         "title": "Notes & Metrics Serverless Dashboard",
-        "description": "Full-Stack web app for drag-and-drop task management with decoupled serverless architecture to optimize infrastructure costs processing metrics in background."
+        "description": "Full-Stack web app for user management, free-form sticky-notes board and serverless metrics dashboard. Drag-and-drop with @dnd-kit, AWS Lambda function for dashboard metrics, LocalStack for offline emulation. Laravel 12 + React 18 + Node.js 20 + PostgreSQL 16."
       },
-      "inventarios": {
-        "title": "Inventory & IoT Monitoring",
-        "description": "Inventory and lot traceability management system. Includes warehouse control, reports, and real-time environmental monitoring integrated with IoT sensors."
+      "pharmacy": {
+        "title": "Pharmaceutical Warehouse & IoT Monitoring",
+        "description": "System for warehouses, products, lots, kardex, transfers, prescriptions and dispensation with special control. Real-time environmental monitoring (temperature/humidity) via IoT sensors. Granular role-based permissions at row level. Laravel 9 + PHP 8.2 + React 19 + SQL Server 2025 + Playwright E2E + Docker Compose."
+      },
+      "javaTemplate": {
+        "title": "Java REST Template (no Spring)",
+        "description": "Opinionated REST API skeleton: layered architecture with one-way dependencies, JWT with DB-backed revocable sessions, bcrypt with schema invariants, Flyway migrations, and 78 tests covering SQL injection, XSS, concurrency and session lifecycle. Custom ~40-line DI registry. Javalin + PostgreSQL 16. Ships with an AI-consumable SKILL.md spec."
+      },
+      "rag": {
+        "title": "RAG API (Hexagonal Architecture)",
+        "description": "Retrieval-Augmented Generation system with FastAPI + Pinecone + OpenAI (text-embedding-3-small + GPT-4o-mini). PDF/TXT ingestion with overlap chunking, similarity search with configurable score threshold, citation-grounded answers. Hexagonal architecture (Ports & Adapters) for testability and vendor flexibility."
       }
     }
   },
@@ -140,7 +148,7 @@
       },
       "projects": {
         "question": "What kind of projects has Johan Ospitia built?",
-        "answer": "Resume Tailor AI v2.5 (FastAPI + React 19 + Typst + ATS analysis with LLM chain orchestration), HR-Tech Multi-Tenant SaaS Platform (Spring Boot + Angular + PostgreSQL with RBAC/JWT), Serverless Notes & Metrics Dashboard (Laravel + React + AWS Lambda + Node.js), and an Inventory & IoT Monitoring system with real-time environmental sensors."
+        "answer": "Six production-grade projects across Spring Boot, Laravel, FastAPI and Javalin: Resume Tailor AI v2.5 (FastAPI + React 19 + RenderCV/Typst + multi-LLM ATS auditor), HR-Tech Multi-Tenant SaaS (Spring Boot 3.4 + Angular 21 + MinIO + ClamAV), Pharmaceutical Warehouse & IoT Monitoring (Laravel 9 + React 19 + SQL Server 2025), Serverless Notes & Metrics Dashboard (Laravel 12 + React 18 + AWS Lambda + LocalStack), a Java REST Template (no Spring, 78 tests, JWT-revocable sessions), and a RAG API (FastAPI + Pinecone + OpenAI, hexagonal architecture)."
       },
       "contact": {
         "question": "How can I contact Johan Ospitia?",

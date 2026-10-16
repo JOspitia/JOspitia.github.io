@@ -93,19 +93,27 @@
     "items": {
       "resumeTailor": {
         "title": "Resume Tailor AI v2.5",
-        "description": "Plataforma AI Full-Stack para auditar y adaptar CVs a ofertas laborales mediante orquestación en cadena de LLMs y análisis ATS. Generación rápida de PDF vectorial con Typst y procesamiento en tiempo real (SSE)."
+        "description": "Plataforma AI Full-Stack que audita y adapta CVs a ofertas laborales mediante cadena de tres proveedores LLM (OpenAI-compatible primario → cascada Gemini de fallback). Generación de PDF vectorial con RenderCV+Typst, auditoría ATS, detector de tono IA, editor YAML iterativo y perfiles multi-dominio (tech / HR / psicología). FastAPI + React 19 + Vite."
       },
       "hrTech": {
-        "title": "HR-Tech SaaS Platform",
-        "description": "Plataforma SaaS Multi-Tenant empresarial para gestión integral de RRHH y nómina. Incluye aislamiento lógico de datos por empresa (RBAC/JWT) a nivel SQL y almacenamiento seguro en la nube."
+        "title": "Plataforma HR-Tech SaaS",
+        "description": "SaaS empresarial Multi-Tenant para gestión integral de RRHH y nómina. Aislamiento lógico de datos por empresa (RBAC/JWT) a nivel SQL y de storage, auth híbrido JWT + Cookie HttpOnly, rate limiting con Bucket4j, protección CSRF, subida de archivos escaneados con ClamAV y almacenados en MinIO mediante URLs pre-firmadas. Spring Boot 3.4 + Angular 21 + PostgreSQL 15 + Docker."
       },
       "fixlat": {
         "title": "Tablero de Notas y Métricas Serverless",
-        "description": "Aplicación web Full-Stack para gestión de tareas drag-and-drop con arquitectura serverless desacoplada para optimizar costos de infraestructura procesando métricas en segundo plano."
+        "description": "Aplicación web Full-Stack para gestión de usuarios, tablero libre de notas adhesivas y dashboard de métricas serverless. Drag-and-drop con @dnd-kit, función AWS Lambda para métricas del dashboard, LocalStack para emulación local. Laravel 12 + React 18 + Node.js 20 + PostgreSQL 16."
       },
-      "inventarios": {
-        "title": "Gestión de Inventarios y Monitoreo IoT",
-        "description": "Sistema de gestión de inventarios y trazabilidad de lotes. Incluye control de bodegas, reportes y monitoreo ambiental en tiempo real integrado con sensores IoT."
+      "pharmacy": {
+        "title": "Gestión Farmacéutica y Monitoreo IoT",
+        "description": "Sistema para bodegas, productos, lotes, kardex, traslados, prescripciones y dispensación con control especial. Monitoreo ambiental en tiempo real (temperatura/humedad) vía sensores IoT. Permisos granulares por rol a nivel de fila. Laravel 9 + PHP 8.2 + React 19 + SQL Server 2025 + Playwright E2E + Docker Compose."
+      },
+      "javaTemplate": {
+        "title": "Java REST Template (sin Spring)",
+        "description": "Esqueleto opinionated de API REST: arquitectura por capas con dependencias en una sola dirección, JWT con sesiones revocables respaldado en DB, bcrypt con invariantes de esquema, migraciones Flyway y 78 tests cubriendo inyección SQL, XSS, concurrencia y ciclo de vida de sesión. Registry de DI custom de ~40 líneas. Javalin + PostgreSQL 16. Incluye SKILL.md consumible por IA."
+      },
+      "rag": {
+        "title": "API RAG (Arquitectura Hexagonal)",
+        "description": "Sistema de Retrieval-Augmented Generation con FastAPI + Pinecone + OpenAI (text-embedding-3-small + GPT-4o-mini). Ingesta PDF/TXT con chunking por overlap, búsqueda por similitud con score threshold configurable y respuestas con citas a fuentes. Arquitectura hexagonal (Ports & Adapters) para testabilidad y flexibilidad de proveedor."
       }
     }
   },
@@ -140,7 +148,7 @@
       },
       "projects": {
         "question": "¿Qué tipo de proyectos ha desarrollado?",
-        "answer": "Resume Tailor AI v2.5 (FastAPI + React 19 + Typst + análisis ATS con orquestación de LLMs en cadena), Plataforma HR-Tech SaaS Multi-Tenant (Spring Boot + Angular + PostgreSQL con RBAC/JWT), Tablero de Notas y Métricas Serverless (Laravel + React + AWS Lambda + Node.js), y un sistema de Inventarios y Monitoreo IoT con sensores ambientales en tiempo real."
+        "answer": "Seis proyectos de grado productivo en Spring Boot, Laravel, FastAPI y Javalin: Resume Tailor AI v2.5 (FastAPI + React 19 + RenderCV/Typst + auditor ATS multi-LLM), Plataforma HR-Tech SaaS Multi-Tenant (Spring Boot 3.4 + Angular 21 + MinIO + ClamAV), Gestión Farmacéutica y Monitoreo IoT (Laravel 9 + React 19 + SQL Server 2025), Tablero de Notas y Métricas Serverless (Laravel 12 + React 18 + AWS Lambda + LocalStack), un Java REST Template (sin Spring, 78 tests, sesiones JWT revocables) y una API RAG (FastAPI + Pinecone + OpenAI, arquitectura hexagonal)."
       },
       "contact": {
         "question": "¿Cómo puedo contactarlo?",

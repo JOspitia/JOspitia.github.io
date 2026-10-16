@@ -29,7 +29,7 @@ export type SkillCategory =
 
 export type SkillIconName =
   | 'spring'
-  | 'node'
+  | 'laravel'
   | 'react'
   | 'playwright'
   | 'postgresql'

@@ -51,6 +51,12 @@
     <link rel="icon" type="image/png" sizes="32x32" href="/favicon.svg" />
     <link rel="mask-icon" href="/favicon.svg" color="#3b82f6" />
 
+    <!-- PWA manifest + iOS home-screen icon. apple-touch-icon is the
+         file iOS Safari uses when the user adds the page to their
+         home screen; sized at 180x180 (Retina @3x). -->
+    <link rel="manifest" href="/site.webmanifest" />
+    <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png" />
+
     <!-- Preconnect for Google Fonts cuts the TLS handshake cost on the
          first paint. display=swap keeps the body text visible with the
          system fallback while Inter loads. -->
@@ -58,9 +64,17 @@
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600&display=swap" />
 
-    <!-- Preload the LCP image (Hero avatar) so the above-the-fold photo
-         does not block first paint. -->
-    <link rel="preload" as="image" href="/foto.jpg" />
+    <!-- Preload the WebP variant of the LCP image (Hero avatar) so the
+         above-the-fold photo does not block first paint. WebP is 63%
+         smaller than the source JPEG (116 KB → 43 KB at q=82) so the
+         LCP improvement is material on slow connections. -->
+    <link
+      rel="preload"
+      as="image"
+      href="/foto.webp"
+      type="image/webp"
+      imagesrcset="/foto.webp"
+    />
 
     <!-- Google Search Console verification token (do not remove even after
          verification completes — required to keep the property verified). -->
@@ -303,7 +317,108 @@
     }
     </script>
 
-    <!-- JSON-LD #4: FAQPage. Mirrors the bilingual FAQ section that
+    <!-- JSON-LD #4: ItemList — featured projects. Each card in the
+       /// Projects section is described here as a SoftwareSourceCode
+       /// node so Google can surface the projects as a result-list /
+       /// carousel when the query matches the tech-stack keywords
+       /// (Spring Boot, Laravel, FastAPI, etc.). orderList position
+       /// matches the visual order on the page. -->
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "ItemList",
+      "@id": "https://jospitia.github.io/#projects",
+      "url": "https://jospitia.github.io/#projects",
+      "name": "Featured projects by Johan Ospitia",
+      "inLanguage": ["en", "es"],
+      "isPartOf": { "@id": "https://jospitia.github.io/#website" },
+      "about": { "@id": "https://jospitia.github.io/#person" },
+      "itemListOrder": "https://schema.org/ItemListOrderAscending",
+      "numberOfItems": 6,
+      "itemListElement": [
+        {
+          "@type": "ListItem",
+          "position": 1,
+          "item": {
+            "@type": "SoftwareSourceCode",
+            "name": "Resume Tailor AI v2.5",
+            "description": "Full-Stack AI platform that audits and tailors CVs to job descriptions via a chain of three LLM providers (OpenAI-compatible primary, Gemini cascade fallback). Vector PDF generation with RenderCV and Typst; ATS score auditing; AI-tone detector; iterative YAML editor.",
+            "url": "https://github.com/JOspitia/jd-to-resume-v2",
+            "codeRepository": "https://github.com/JOspitia/jd-to-resume-v2",
+            "programmingLanguage": ["Python", "TypeScript", "JavaScript"],
+            "author": { "@id": "https://jospitia.github.io/#person" }
+          }
+        },
+        {
+          "@type": "ListItem",
+          "position": 2,
+          "item": {
+            "@type": "SoftwareSourceCode",
+            "name": "HR-Tech Multi-Tenant SaaS Platform",
+            "description": "Enterprise HR and payroll management with logical data isolation per company (RBAC/JWT), hybrid JWT + HttpOnly Cookie auth, rate limiting (Bucket4j), CSRF protection, file uploads scanned with ClamAV and stored in MinIO via pre-signed URLs.",
+            "url": "https://github.com/JOspitia/AppMiAplicacion",
+            "codeRepository": "https://github.com/JOspitia/AppMiAplicacion",
+            "programmingLanguage": ["Java", "TypeScript"],
+            "author": { "@id": "https://jospitia.github.io/#person" }
+          }
+        },
+        {
+          "@type": "ListItem",
+          "position": 3,
+          "item": {
+            "@type": "SoftwareSourceCode",
+            "name": "Pharmaceutical Warehouse and IoT Monitoring",
+            "description": "Warehouses, products, lots, kardex, transfers, prescriptions and dispensation with special control. Real-time environmental monitoring (temperature and humidity) via IoT sensors. Granular row-level RBAC.",
+            "url": "https://github.com/JOspitia/pharmacy",
+            "codeRepository": "https://github.com/JOspitia/pharmacy",
+            "programmingLanguage": ["PHP", "TypeScript", "SQL"],
+            "author": { "@id": "https://jospitia.github.io/#person" }
+          }
+        },
+        {
+          "@type": "ListItem",
+          "position": 4,
+          "item": {
+            "@type": "SoftwareSourceCode",
+            "name": "Notes and Metrics Serverless Dashboard",
+            "description": "User management + free-form sticky-notes board (drag-and-drop with @dnd-kit) + AWS Lambda dashboard metrics, with LocalStack for offline emulation.",
+            "url": "https://github.com/JOspitia/fixlat-tablero-notas",
+            "codeRepository": "https://github.com/JOspitia/fixlat-tablero-notas",
+            "programmingLanguage": ["PHP", "TypeScript", "JavaScript"],
+            "author": { "@id": "https://jospitia.github.io/#person" }
+          }
+        },
+        {
+          "@type": "ListItem",
+          "position": 5,
+          "item": {
+            "@type": "SoftwareSourceCode",
+            "name": "Java REST Template (no Spring)",
+            "description": "Opinionated REST API skeleton: layered architecture with one-way dependencies, JWT with DB-backed revocable sessions, bcrypt with schema invariants, Flyway migrations, 78 tests covering SQL injection, XSS, concurrency and session lifecycle.",
+            "url": "https://github.com/JOspitia/java-rest-template",
+            "codeRepository": "https://github.com/JOspitia/java-rest-template",
+            "programmingLanguage": ["Java"],
+            "author": { "@id": "https://jospitia.github.io/#person" }
+          }
+        },
+        {
+          "@type": "ListItem",
+          "position": 6,
+          "item": {
+            "@type": "SoftwareSourceCode",
+            "name": "RAG API (Hexagonal Architecture)",
+            "description": "Retrieval-Augmented Generation system with FastAPI + Pinecone + OpenAI (text-embedding-3-small + GPT-4o-mini). PDF/TXT ingestion with overlap chunking, similarity search with configurable score threshold, citation-grounded answers.",
+            "url": "https://github.com/JOspitia/ragtech",
+            "codeRepository": "https://github.com/JOspitia/ragtech",
+            "programmingLanguage": ["Python"],
+            "author": { "@id": "https://jospitia.github.io/#person" }
+          }
+        }
+      ]
+    }
+    </script>
+
+    <!-- JSON-LD #5: FAQPage. Mirrors the bilingual FAQ section that
        /// App.tsx renders on the page. Google reads this to surface
        /// expandable rich-result FAQs in the SERP; AI engines use it to
        /// ground "who/what/where" questions with a verifiable source.
@@ -381,6 +496,43 @@
   </head>
   <body>
     <div id="root"></div>
+
+    <!-- Noscript fallback: crawlers that don't execute JavaScript (Bing,
+         some social-card scrapers, archived snapshots) would otherwise
+         see a blank <div>. This block mirrors the Hero + About copy
+         so they can still extract the entity signature. The visible
+         block is hidden from screen-reader users who DO have JS via
+         the hidden HTML attribute (the React app overlays it). -->
+    <noscript>
+      <main style="max-width:760px;margin:2rem auto;padding:1.25rem;font-family:system-ui,Inter,sans-serif;color:#0f172a;line-height:1.6;">
+        <h1 style="font-size:2rem;font-weight:700;margin:0 0 .25rem;">Johan Ospitia</h1>
+        <p style="margin:0 0 .25rem;color:#2563eb;font-weight:600;">Full-Stack Developer &amp; QA Automation Engineer</p>
+        <p style="margin:0 0 1.5rem;color:#475569;">Cali, Colombia · Open to remote work</p>
+
+        <h2 style="font-size:1.25rem;font-weight:600;margin:1.5rem 0 .5rem;">About</h2>
+        <p>Computer Engineer from Universidad Autónoma de Nariño (Colombia), currently pursuing a Master's in Project Management at UNIR — Universidad Internacional de La Rioja (Spain). 4+ years of experience building full-stack web applications with TypeScript, React, Java and Spring Boot, and leading QA Automation strategies with Playwright and Cypress in healthcare software.</p>
+
+        <h2 style="font-size:1.25rem;font-weight:600;margin:1.5rem 0 .5rem;">Featured projects</h2>
+        <ul>
+          <li><strong>Resume Tailor AI v2.5</strong> — Full-Stack AI platform that audits and tailors CVs to job descriptions via LLM chain orchestration. <a href="https://github.com/JOspitia/jd-to-resume-v2">GitHub</a></li>
+          <li><strong>HR-Tech Multi-Tenant SaaS Platform</strong> — Spring Boot 3.4 + Angular 21 + PostgreSQL + MinIO + ClamAV. <a href="https://github.com/JOspitia/AppMiAplicacion">GitHub</a></li>
+          <li><strong>Pharmaceutical Warehouse &amp; IoT Monitoring</strong> — Laravel 9 + React 19 + SQL Server 2025 + Playwright E2E. <a href="https://github.com/JOspitia/pharmacy">GitHub</a></li>
+          <li><strong>Notes &amp; Metrics Serverless Dashboard</strong> — Laravel 12 + React 18 + AWS Lambda + LocalStack. <a href="https://github.com/JOspitia/fixlat-tablero-notas">GitHub</a></li>
+          <li><strong>Java REST Template (no Spring)</strong> — Java 25 + Javalin + JWT revocable sessions, 78 tests. <a href="https://github.com/JOspitia/java-rest-template">GitHub</a></li>
+          <li><strong>RAG API (Hexagonal Architecture)</strong> — FastAPI + Pinecone + OpenAI + Ports &amp; Adapters. <a href="https://github.com/JOspitia/ragtech">GitHub</a></li>
+        </ul>
+
+        <h2 style="font-size:1.25rem;font-weight:600;margin:1.5rem 0 .5rem;">Contact</h2>
+        <ul>
+          <li>LinkedIn: <a href="https://www.linkedin.com/in/johan-ospitia/">linkedin.com/in/johan-ospitia</a></li>
+          <li>GitHub: <a href="https://github.com/JOspitia">github.com/JOspitia</a></li>
+          <li>WhatsApp: +57 322 359 5445</li>
+          <li>Email: <a href="mailto:jjohanospitia@gmail.com">jjohanospitia@gmail.com</a></li>
+        </ul>
+        <p style="margin-top:2rem;color:#64748b;font-size:.875rem;">This page is a React SPA — for the full interactive version, please enable JavaScript.</p>
+      </main>
+    </noscript>
+
     <script type="module" src="/src/main.tsx"></script>
   </body>
 </html>

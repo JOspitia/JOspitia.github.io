@@ -1,0 +1,27 @@
+{
+  "name": "Johan Ospitia — Portfolio",
+  "short_name": "J. Ospitia",
+  "description": "Full-Stack Developer & QA Automation Engineer based in Cali, Colombia. Open to remote work.",
+  "start_url": "/",
+  "scope": "/",
+  "display": "standalone",
+  "orientation": "portrait-primary",
+  "background_color": "#ffffff",
+  "theme_color": "#3b82f6",
+  "lang": "en",
+  "categories": ["developer", "portfolio", "technology"],
+  "icons": [
+    {
+      "src": "/favicon.svg",
+      "sizes": "any",
+      "type": "image/svg+xml",
+      "purpose": "any"
+    },
+    {
+      "src": "/apple-touch-icon.png",
+      "sizes": "180x180",
+      "type": "image/png",
+      "purpose": "any maskable"
+    }
+  ]
+}
