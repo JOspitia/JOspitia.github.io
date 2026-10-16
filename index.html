@@ -2,57 +2,145 @@
 <html lang="en">
   <head>
     <meta charset="UTF-8" />
-    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover" />
     <meta name="theme-color" content="#3b82f6" />
-    <link rel="canonical" href="https://jospitia.github.io/" />
-    <title>Johan Ospitia — Full-Stack Developer</title>
-    <meta name="description" content="Portfolio of Johan Ospitia, Full-Stack Developer specializing in TypeScript, React, and accessible web products." />
+    <meta name="color-scheme" content="light" />
+    <meta name="format-detection" content="telephone=no" />
+
+    <!-- Primary SEO: title is sized to ~57 chars (target 50-60). Front-loads
+         primary keyword "Full-Stack Developer" + secondary "QA Automation" +
+         geo "Cali" so both Google and AI engines can extract a clean entity
+         signature from the <title> alone. -->
+    <title>Johan Ospitia — Full-Stack &amp; QA Engineer · Cali, Colombia</title>
+
+    <!-- Meta description tuned to ~158 chars (target 150-160). Includes the
+         three primary keyword clusters, the geo modifier, a verifiable
+         numeric proof point, and an explicit "Open to remote" CTA so the
+         snippet answers "who/what/where/availability" without a click. -->
+    <meta
+      name="description"
+      content="Full-Stack Developer & QA Automation Engineer in Cali, Colombia. 4+ years building TypeScript, React, Java, Spring Boot & Playwright apps. Open to remote work."
+    />
+
+    <!-- robots: allow full indexing of the homepage; reference to sitemap
+         via robots.txt (already present in /public). No imageindex /
+         noarchive opt-outs so the profile image and CV stay in image search. -->
+    <meta name="robots" content="index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1" />
+
     <meta name="author" content="Johan Daniel Ospitia Yaguara" />
+    <meta name="generator" content="React + Vite" />
+    <meta name="rating" content="general" />
+    <meta name="distribution" content="global" />
+    <meta name="revisit-after" content="14 days" />
+
+    <!-- Canonical + hreflang. The SPA serves both ES and EN at the same
+         URL (locale is selected client-side via i18next), so the
+         hreflang annotations are self-referential. This still helps
+         crawlers confirm the entity is bilingual and avoids ambiguity
+         when social/AI agents snapshot the page. -->
+    <link rel="canonical" href="https://jospitia.github.io/" />
+    <link rel="alternate" hreflang="en" href="https://jospitia.github.io/" />
+    <link rel="alternate" hreflang="es" href="https://jospitia.github.io/" />
+    <link rel="alternate" hreflang="x-default" href="https://jospitia.github.io/" />
+
+    <!-- Icons. The repo ships only favicon.svg; we still declare the SVG
+         explicitly with sizes for modern browsers, plus a mask-icon for
+         Safari pinned-tab styling. -->
+    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+    <link rel="icon" type="image/png" sizes="32x32" href="/favicon.svg" />
+    <link rel="mask-icon" href="/favicon.svg" color="#3b82f6" />
+
+    <!-- Preconnect for Google Fonts cuts the TLS handshake cost on the
+         first paint. display=swap keeps the body text visible with the
+         system fallback while Inter loads. -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600&display=swap" />
+
+    <!-- Preload the LCP image (Hero avatar) so the above-the-fold photo
+         does not block first paint. -->
+    <link rel="preload" as="image" href="/foto.jpg" />
 
     <!-- Google Search Console verification token (do not remove even after
          verification completes — required to keep the property verified). -->
     <meta name="google-site-verification" content="wN6vgsPTHgafS5375BQe2unxz_vsWAbJEYike5VTASY" />
 
-    <!-- Open Graph -->
+    <!-- Open Graph (Facebook, LinkedIn, Slack, Discord, WhatsApp previews).
+         og:type=profile is the spec-correct type for a Person landing
+         page; the profile.* properties give social cards the structured
+         identity they need to render "first last · username" headers. -->
     <meta property="og:type" content="profile" />
     <meta property="og:profile:first_name" content="Johan Daniel" />
     <meta property="og:profile:last_name" content="Ospitia Yaguara" />
     <meta property="og:profile:username" content="JOspitia" />
-    <meta property="og:title" content="Johan Ospitia — Full-Stack Developer" />
-    <meta property="og:description" content="Portfolio of Johan Ospitia, Full-Stack Developer specializing in TypeScript, React, and accessible web products." />
+    <meta property="og:title" content="Johan Ospitia — Full-Stack & QA Engineer · Cali, Colombia" />
+    <meta
+      property="og:description"
+      content="Full-Stack Developer & QA Automation Engineer in Cali, Colombia. 4+ years building TypeScript, React, Java, Spring Boot & Playwright apps. Open to remote work."
+    />
     <meta property="og:url" content="https://jospitia.github.io/" />
+    <meta property="og:site_name" content="Johan Ospitia — Portfolio" />
     <meta property="og:locale" content="en_US" />
     <meta property="og:locale:alternate" content="es_ES" />
     <meta property="og:image" content="https://jospitia.github.io/og-image.png" />
+    <meta property="og:image:secure_url" content="https://jospitia.github.io/og-image.png" />
     <meta property="og:image:width" content="1200" />
     <meta property="og:image:height" content="630" />
     <meta property="og:image:type" content="image/png" />
-    <meta property="og:image:alt" content="Johan Ospitia — Full-Stack Developer / Desarrollador Full-Stack" />
+    <meta property="og:image:alt" content="Johan Ospitia — Full-Stack & QA Engineer / Desarrollador Full-Stack" />
+    <meta property="og:determiner" content="" />
+    <meta property="og:updated_time" content="2026-10-16T15:42:23Z" />
 
-    <!-- Twitter Card -->
+    <!-- Twitter Card. No twitter:site / twitter:creator — user opted out
+         of linking an X account. summary_large_image is still the right
+         card for a single-page profile with hero image. -->
     <meta name="twitter:card" content="summary_large_image" />
-    <meta name="twitter:title" content="Johan Ospitia — Full-Stack Developer" />
-    <meta name="twitter:description" content="Portfolio of Johan Ospitia, Full-Stack Developer specializing in TypeScript, React, and accessible web products." />
+    <meta name="twitter:title" content="Johan Ospitia — Full-Stack & QA Engineer · Cali, Colombia" />
+    <meta
+      name="twitter:description"
+      content="Full-Stack Developer & QA Automation Engineer in Cali, Colombia. 4+ years building TypeScript, React, Java, Spring Boot & Playwright apps."
+    />
     <meta name="twitter:image" content="https://jospitia.github.io/og-image.png" />
+    <meta name="twitter:image:alt" content="Johan Ospitia — Full-Stack & QA Engineer" />
 
-    <!-- Inter via Google Fonts (weights 400 + 600). Preconnect cuts TLS
-         handshake cost; display=swap keeps text visible with the system
-         fallback while Inter loads. -->
-    <link rel="preconnect" href="https://fonts.googleapis.com" />
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600&display=swap" />
+    <!-- JSON-LD #1: WebSite. Gives Google the data it needs to render a
+       /// sitelinks search box and to anchor the brand SERP to this domain.
+       /// The SearchAction is intentionally omitted (no on-site search),
+       /// which is preferred over a broken action. -->
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "WebSite",
+      "@id": "https://jospitia.github.io/#website",
+      "url": "https://jospitia.github.io/",
+      "name": "Johan Ospitia — Portfolio",
+      "alternateName": "Portafolio de Johan Ospitia",
+      "inLanguage": ["en", "es"],
+      "publisher": { "@id": "https://jospitia.github.io/#person" },
+      "copyrightHolder": { "@id": "https://jospitia.github.io/#person" },
+      "image": "https://jospitia.github.io/og-image.png"
+    }
+    </script>
 
-    <!-- JSON-LD: Schema.org Person. Google reads this to build the knowledge
-         graph entry for the site owner. sameAs links GitHub, LinkedIn and
-         the contact email so search can correlate identities. jobTitle and
-         description are single strings (Schema.org has no native i18n), so
-         we use neutral English to maximize the global technical audience.
-         Reference: https://schema.org/Person -->
+    <!-- JSON-LD #2: Person (Knowledge Graph entity). @id is reused as a
+       /// stable graph node so WebSite.publisher above can point back at it
+       /// without forcing the engine to re-parse the whole record.
+       ///  • address: PostalAddress for the local SEO "near me" queries.
+       ///  • alumniOf: explicit education chain — Universidad Autónoma de
+       ///    Nariño (bachelor's) + UNIR (master's in progress).
+       ///  • knowsAbout: 18 verifiable technical topics. AI engines
+       ///    (ChatGPT, Perplexity, Claude) preferentially cite entities
+       ///    that explicitly declare their knowledge domain.
+       ///  • hasOccupation / Occupation: structure an Offered
+       ///    Occupation node per Schema.org so Google can map the entity to
+       ///    job-title queries (e.g. "QA Automation engineer Cali").
+       ///  • sameAs: GitHub + LinkedIn for identity disambiguation. -->
     <script type="application/ld+json">
     {
       "@context": "https://schema.org",
       "@type": "Person",
+      "@id": "https://jospitia.github.io/#person",
       "name": "Johan Ospitia",
       "alternateName": [
         "Johan Daniel Ospitia Yaguara",
@@ -62,13 +150,231 @@
       "givenName": "Johan Daniel",
       "additionalName": "Yaguara",
       "familyName": "Ospitia Yaguara",
+      "honorificSuffix": "Ing.",
       "url": "https://jospitia.github.io/",
-      "image": "https://jospitia.github.io/og-image.png",
-      "jobTitle": "Full Stack Engineer & QA Automation Specialist",
-      "knowsLanguage": ["es", "en"],
+      "mainEntityOfPage": { "@id": "https://jospitia.github.io/#person" },
+      "image": {
+        "@type": "ImageObject",
+        "url": "https://jospitia.github.io/og-image.png",
+        "width": 1200,
+        "height": 630
+      },
+      "email": "mailto:jjohanospitia@gmail.com",
+      "telephone": "+57-322-359-5445",
+      "nationality": {
+        "@type": "Country",
+        "name": "Colombia"
+      },
+      "address": {
+        "@type": "PostalAddress",
+        "addressLocality": "Cali",
+        "addressRegion": "Valle del Cauca",
+        "addressCountry": "CO",
+        "postalCode": "760001"
+      },
+      "homeLocation": {
+        "@type": "Place",
+        "name": "Cali, Colombia"
+      },
+      "worksFor": [
+        {
+          "@type": "Organization",
+          "name": "Blue Data Service",
+          "url": "https://bluedataservice.com/",
+          "location": "Cali, Colombia",
+          "industry": "Healthcare Software"
+        },
+        {
+          "@type": "Organization",
+          "name": "PROING S.A.",
+          "location": "Cali, Colombia",
+          "industry": "Engineering & Services"
+        }
+      ],
+      "alumniOf": [
+        {
+          "@type": "EducationalOrganization",
+          "name": "Universidad Autónoma de Nariño",
+          "alternateName": "Udenar",
+          "url": "https://www.udenar.edu.co/",
+          "address": {
+            "@type": "PostalAddress",
+            "addressLocality": "Pasto",
+            "addressRegion": "Nariño",
+            "addressCountry": "CO"
+          }
+        },
+        {
+          "@type": "EducationalOrganization",
+          "name": "Universidad Internacional de La Rioja",
+          "alternateName": "UNIR",
+          "url": "https://www.unir.net/",
+          "address": {
+            "@type": "PostalAddress",
+            "addressLocality": "Logroño",
+            "addressCountry": "ES"
+          }
+        }
+      ],
+      "jobTitle": [
+        "Full-Stack Developer",
+        "QA Automation Engineer",
+        "Software Engineer"
+      ],
+      "hasOccupation": [
+        {
+          "@type": "Occupation",
+          "name": "Full-Stack Developer",
+          "occupationLocation": {
+            "@type": "City",
+            "name": "Cali, Colombia"
+          },
+          "skills": "TypeScript, React, Java, Spring Boot, Node.js, PHP, Angular"
+        },
+        {
+          "@type": "Occupation",
+          "name": "QA Automation Engineer",
+          "occupationLocation": {
+            "@type": "City",
+            "name": "Cali, Colombia"
+          },
+          "skills": "Playwright, Cypress, Postman, Selenium, CI/CD, REST API testing"
+        }
+      ],
+      "knowsLanguage": [
+      {"@type": "Language", "name": "Spanish", "alternateName": "es"},
+      {"@type": "Language", "name": "English", "alternateName": "en"}
+      ],
+      "knowsAbout": [
+      {"@type": "Thing", "name": "Full-Stack Web Development"},
+      {"@type": "Thing", "name": "Software Quality Assurance"},
+      {"@type": "Thing", "name": "Test Automation"},
+      {"@type": "Thing", "name": "TypeScript"},
+      {"@type": "Thing", "name": "JavaScript"},
+      {"@type": "Thing", "name": "React"},
+      {"@type": "Thing", "name": "Angular"},
+      {"@type": "Thing", "name": "Java"},
+      {"@type": "Thing", "name": "Spring Boot"},
+      {"@type": "Thing", "name": "Node.js"},
+      {"@type": "Thing", "name": "PHP"},
+      {"@type": "Thing", "name": "PostgreSQL"},
+      {"@type": "Thing", "name": "MySQL"},
+      {"@type": "Thing", "name": "Docker"},
+      {"@type": "Thing", "name": "Playwright"},
+      {"@type": "Thing", "name": "Cypress"},
+      {"@type": "Thing", "name": "REST APIs"},
+      {"@type": "Thing", "name": "Microservices"},
+      {"@type": "Thing", "name": "CI/CD"},
+      {"@type": "Thing", "name": "Agile Methodologies"},
+      {"@type": "Thing", "name": "Scrum"},
+      {"@type": "Thing", "name": "AI-assisted Software Development"},
+      {"@type": "Thing", "name": "Large Language Models"}
+      ],
       "sameAs": [
         "https://github.com/JOspitia",
         "https://www.linkedin.com/in/johan-ospitia/"
+      ]
+    }
+    </script>
+
+    <!-- JSON-LD #3: ProfilePage. Wraps the entire page as a ProfilePage so
+       /// Google can disambiguate "this URL is *about* a Person" from
+       /// "this URL is *by* a Person" (the latter would be Article). -->
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "ProfilePage",
+      "@id": "https://jospitia.github.io/#profilepage",
+      "url": "https://jospitia.github.io/",
+      "name": "Johan Ospitia — Full-Stack & QA Engineer",
+      "inLanguage": ["en", "es"],
+      "isPartOf": { "@id": "https://jospitia.github.io/#website" },
+      "about": { "@id": "https://jospitia.github.io/#person" },
+      "mainEntity": { "@id": "https://jospitia.github.io/#person" },
+      "image": "https://jospitia.github.io/og-image.png",
+      "dateCreated": "2026-09-22",
+      "dateModified": "2026-10-16",
+      "primaryImageOfPage": {
+        "@type": "ImageObject",
+        "url": "https://jospitia.github.io/og-image.png",
+        "width": 1200,
+        "height": 630
+      }
+    }
+    </script>
+
+    <!-- JSON-LD #4: FAQPage. Mirrors the bilingual FAQ section that
+       /// App.tsx renders on the page. Google reads this to surface
+       /// expandable rich-result FAQs in the SERP; AI engines use it to
+       /// ground "who/what/where" questions with a verifiable source.
+       /// The Q/A strings must stay byte-identical to the rendered page
+       /// so the schema and the visible content do not drift. -->
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "FAQPage",
+      "@id": "https://jospitia.github.io/#faq",
+      "url": "https://jospitia.github.io/#faq",
+      "inLanguage": ["en", "es"],
+      "isPartOf": { "@id": "https://jospitia.github.io/#website" },
+      "about": { "@id": "https://jospitia.github.io/#person" },
+      "mainEntity": [
+        {
+          "@type": "Question",
+          "name": "Who is Johan Ospitia?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Computer Engineer graduated from Universidad Autónoma de Nariño (Colombia), currently pursuing a Master's in Project Management at UNIR — Universidad Internacional de La Rioja (Spain). 4+ years of experience building full-stack web applications with TypeScript, React, Java and Spring Boot, and leading QA Automation strategies with Playwright and Cypress in healthcare software."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "What technologies does Johan Ospitia specialize in?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Core stack: TypeScript, JavaScript, React, Angular, Java, Spring Boot, Node.js, PHP, PostgreSQL, MySQL, Docker, and CI/CD pipelines. QA stack: Playwright, Cypress, Postman, and Selenium. AI stack: Gemini, Claude, GitHub Copilot, Gentle-AI, Kimi K2 and DeepSeek for AI-assisted development and test generation."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Where is Johan Ospitia based? Does he work remotely?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Based in Cali, Colombia (Valle del Cauca). Available for full-time remote work worldwide, with proven experience collaborating across time zones under Scrum methodology and distributed engineering teams."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "What is Johan Ospitia's experience in QA Automation?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Led the QA strategy at Blue Data Service (Feb 2024 – Sep 2026) for healthcare software, designing and executing E2E and REST API automation frameworks with Playwright, Cypress and Postman. Achieved 90% automated E2E coverage in critical healthcare modules (admissions, billing, dispensation) and a 30% reduction in production defects through AI-augmented test generation."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "How does Johan Ospitia use AI in his projects?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Uses AI orchestrators like Gentle-AI, Kimi K2 and DeepSeek for phase-based project planning and technical requirements; AI validation (Open Code + MiniMax) to align user stories with implemented code and reduce pre-release defects; and models like Gemini and Claude to accelerate code writing and auto-generate Playwright E2E test suites inside CI/CD pipelines. Result: 40% reduction in delivery times."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "What kind of projects has Johan Ospitia built?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Resume Tailor AI v2.5 (FastAPI + React 19 + Typst + ATS analysis with LLM chain orchestration), HR-Tech Multi-Tenant SaaS Platform (Spring Boot + Angular + PostgreSQL with RBAC/JWT), Serverless Notes & Metrics Dashboard (Laravel + React + AWS Lambda + Node.js), and an Inventory & IoT Monitoring system with real-time environmental sensors."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "How can I contact Johan Ospitia?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Reach out via LinkedIn (https://www.linkedin.com/in/johan-ospitia/), WhatsApp (+57 322 359 5445), or email (jjohanospitia@gmail.com). Also available on GitHub (@JOspitia) for collaboration, code reviews and pull requests."
+          }
+        }
       ]
     }
     </script>

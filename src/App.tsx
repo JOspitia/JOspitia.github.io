@@ -7,6 +7,7 @@ import { About } from './sections/About';
 import { Skills } from './sections/Skills';
 import { Experience } from './sections/Experience';
 import { Projects } from './sections/Projects';
+import { FAQ } from './sections/FAQ';
 import { Contact } from './sections/Contact';
 import { Footer } from './sections/Footer';
 
@@ -18,6 +19,9 @@ import { Footer } from './sections/Footer';
  * - Sections render in document order so the IntersectionObserver in
  *   `useActiveSection` tracks scroll progress naturally.
  *   PR 8a adds `<Experience />` between Skills and Projects.
+ * - `<FAQ />` sits between Projects and Contact so the Q/A addresses
+ *   remaining objections right before the final conversion CTA, and so
+ *   the visible content matches the JSON-LD FAQPage in index.html.
  * - `<Footer />` is outside `<main>` (it's a `contentinfo` landmark, not
  *   primary content).
  * - `<BackToTop />` floats over everything once the user has scrolled.
@@ -33,6 +37,7 @@ function App(): JSX.Element {
         <Skills />
         <Experience />
         <Projects />
+        <FAQ />
         <Contact />
       </main>
       <Footer />
