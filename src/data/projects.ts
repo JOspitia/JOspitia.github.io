@@ -68,6 +68,6 @@ export const projects: readonly Project[] = [
     titleKey: 'projects.items.rag.title',
     descriptionKey: 'projects.items.rag.description',
     tech: ['FastAPI', 'Pinecone', 'OpenAI', 'LangChain', 'Hexagonal'],
-    repoUrl: 'https://github.com/JOspitia/ragtech',
+    repoUrl: 'https://github.com/JOspitia/rag-tech',
   },
 ] as const;
