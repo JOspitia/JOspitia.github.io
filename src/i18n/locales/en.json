@@ -21,7 +21,7 @@
     "title": "About me",
     "lead": "Computer Engineer with 4+ years of experience as a Full-Stack Developer, fluent in Java, Spring Boot, Node.js, PHP, React, and Angular.",
     "body": "I've actively participated in the complete software lifecycle: from requirements gathering and user story generation to initial architecture, Full-Stack development, and production deployment. Additionally, I've led quality strategies ensuring system stability through advanced automation with Playwright and Cypress.",
-    "ai": "I enhance every stage of the development cycle with AI in a concrete and measurable way: I use orchestrators like Gentle-AI, Kimi K2 and DeepSeek for phase-based project planning and technical requirements structuring; Open Code + MiniMax to validate user stories against implemented code, reducing defects before production; and models like Gemini and Claude (via Antigravity) to accelerate code writing and automated E2E test suite generation with Playwright within CI/CD pipelines under Scrum. Currently completing a Master's in IT Management at UNIR (Spain).",
+    "ai": "I enhance every stage of the development cycle with AI in a concrete and measurable way: I use orchestrators like Gentle-AI, Kimi K2 and DeepSeek for phase-based project planning and technical requirements structuring; Open Code + MiniMax to validate user stories against implemented code, reducing defects before production; and models like Gemini and Claude (via Antigravity) to accelerate code writing and automated E2E test suite generation with Playwright within CI/CD pipelines under Scrum. Computer Engineer from Universidad Autónoma de Nariño (Colombia), currently pursuing a Master's in Project Management at UNIR — Universidad Internacional de La Rioja (Spain).",
     "photoAlt": "Portrait of Johan Ospitia",
     "highlights": {
       "years": "4+ years",
@@ -113,6 +113,40 @@
     "title": "Get in touch",
     "subtitle": "Open to projects, professional proposals, and technical collaborations.",
     "cta": "Reach out"
+  },
+  "faq": {
+    "title": "Frequently asked questions",
+    "subtitle": "Quick answers about background, stack and availability.",
+    "items": {
+      "who": {
+        "question": "Who is Johan Ospitia?",
+        "answer": "Computer Engineer graduated from Universidad Autónoma de Nariño (Colombia), currently pursuing a Master's in Project Management at UNIR — Universidad Internacional de La Rioja (Spain). 4+ years of experience building full-stack web applications with TypeScript, React, Java and Spring Boot, and leading QA Automation strategies with Playwright and Cypress in healthcare software."
+      },
+      "stack": {
+        "question": "What technologies does Johan Ospitia specialize in?",
+        "answer": "Core stack: TypeScript, JavaScript, React, Angular, Java, Spring Boot, Node.js, PHP, PostgreSQL, MySQL, Docker, and CI/CD pipelines. QA stack: Playwright, Cypress, Postman, and Selenium. AI stack: Gemini, Claude, GitHub Copilot, Gentle-AI, Kimi K2 and DeepSeek for AI-assisted development and test generation."
+      },
+      "location": {
+        "question": "Where is Johan Ospitia based? Does he work remotely?",
+        "answer": "Based in Cali, Colombia (Valle del Cauca). Available for full-time remote work worldwide, with proven experience collaborating across time zones under Scrum methodology and distributed engineering teams."
+      },
+      "qa": {
+        "question": "What is Johan Ospitia's experience in QA Automation?",
+        "answer": "Led the QA strategy at Blue Data Service (Feb 2024 – Sep 2026) for healthcare software, designing and executing E2E and REST API automation frameworks with Playwright, Cypress and Postman. Achieved 90% automated E2E coverage in critical healthcare modules (admissions, billing, dispensation) and a 30% reduction in production defects through AI-augmented test generation."
+      },
+      "ai": {
+        "question": "How does Johan Ospitia use AI in his projects?",
+        "answer": "Uses AI orchestrators like Gentle-AI, Kimi K2 and DeepSeek for phase-based project planning and technical requirements; AI validation (Open Code + MiniMax) to align user stories with implemented code and reduce pre-release defects; and models like Gemini and Claude to accelerate code writing and auto-generate Playwright E2E test suites inside CI/CD pipelines. Result: 40% reduction in delivery times."
+      },
+      "projects": {
+        "question": "What kind of projects has Johan Ospitia built?",
+        "answer": "Resume Tailor AI v2.5 (FastAPI + React 19 + Typst + ATS analysis with LLM chain orchestration), HR-Tech Multi-Tenant SaaS Platform (Spring Boot + Angular + PostgreSQL with RBAC/JWT), Serverless Notes & Metrics Dashboard (Laravel + React + AWS Lambda + Node.js), and an Inventory & IoT Monitoring system with real-time environmental sensors."
+      },
+      "contact": {
+        "question": "How can I contact Johan Ospitia?",
+        "answer": "Reach out via LinkedIn (linkedin.com/in/johan-ospitia), WhatsApp (+57 322 359 5445), or email (jjohanospitia@gmail.com). Also available on GitHub (@JOspitia) for collaboration, code reviews and pull requests."
+      }
+    }
   },
   "footer": {
     "builtWith": "Built with React, TypeScript, and Tailwind",

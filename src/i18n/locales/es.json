@@ -21,7 +21,7 @@
     "title": "Sobre mí",
     "lead": "Ingeniero Informático con más de 4 años de experiencia como Desarrollador Full-Stack, con dominio de Java, Spring Boot, Node.js, PHP, React y Angular.",
     "body": "He participado activamente en el ciclo completo del software: desde el levantamiento de requerimientos y la generación de historias de usuario hasta la definición de la arquitectura inicial, el desarrollo Full-Stack e implementación en producción. Adicionalmente, he liderado estrategias de calidad garantizando la estabilidad de sistemas mediante automatización avanzada con Playwright y Cypress.",
-    "ai": "Potencio cada etapa del ciclo de desarrollo con Inteligencia Artificial de forma concreta y medible: utilizo orquestadores como Gentle-AI, Kimi K2 y DeepSeek para planificar proyectos por fases y estructurar requerimientos técnicos; Open Code + MiniMax para validar historias de usuario contra el código implementado, reduciendo defectos antes de la salida a producción; y modelos como Gemini y Claude (vía Antigravity) para acelerar la escritura de código y la generación automatizada de suites de pruebas E2E con Playwright dentro de pipelines CI/CD bajo metodología Scrum. Actualmente complemento mi perfil cursando un Máster Universitario en Dirección y Gestión de TI en la UNIR (España).",
+    "ai": "Potencio cada etapa del ciclo de desarrollo con Inteligencia Artificial de forma concreta y medible: utilizo orquestadores como Gentle-AI, Kimi K2 y DeepSeek para planificar proyectos por fases y estructurar requerimientos técnicos; Open Code + MiniMax para validar historias de usuario contra el código implementado, reduciendo defectos antes de la salida a producción; y modelos como Gemini y Claude (vía Antigravity) para acelerar la escritura de código y la generación automatizada de suites de pruebas E2E con Playwright dentro de pipelines CI/CD bajo metodología Scrum. Ingeniero Informático de la Universidad Autónoma de Nariño (Colombia), actualmente curso una Maestría en Gerencia de Proyectos en UNIR — Universidad Internacional de La Rioja (España).",
     "photoAlt": "Retrato de Johan Ospitia",
     "highlights": {
       "years": "4+ años",
@@ -113,6 +113,40 @@
     "title": "Contacto",
     "subtitle": "Abierto a proyectos, propuestas profesionales y colaboraciones técnicas.",
     "cta": "Escribir"
+  },
+  "faq": {
+    "title": "Preguntas frecuentes",
+    "subtitle": "Respuestas rápidas sobre formación, stack y disponibilidad.",
+    "items": {
+      "who": {
+        "question": "¿Quién es Johan Ospitia?",
+        "answer": "Ingeniero Informático graduado de la Universidad Autónoma de Nariño (Colombia), actualmente cursando Maestría en Gerencia de Proyectos en UNIR — Universidad Internacional de La Rioja (España). Más de 4 años construyendo aplicaciones web full-stack con TypeScript, React, Java y Spring Boot, y liderando estrategias de QA Automation con Playwright y Cypress en software de salud."
+      },
+      "stack": {
+        "question": "¿Qué tecnologías domina Johan Ospitia?",
+        "answer": "Stack principal: TypeScript, JavaScript, React, Angular, Java, Spring Boot, Node.js, PHP, PostgreSQL, MySQL, Docker y pipelines CI/CD. Stack QA: Playwright, Cypress, Postman y Selenium. Stack IA: Gemini, Claude, GitHub Copilot, Gentle-AI, Kimi K2 y DeepSeek para desarrollo asistido y generación de pruebas automatizadas."
+      },
+      "location": {
+        "question": "¿Dónde está ubicado? ¿Trabaja remoto?",
+        "answer": "Ubicado en Cali, Colombia (Valle del Cauca). Disponible para trabajo remoto full-time en cualquier parte del mundo, con amplia experiencia colaborando entre zonas horarias bajo metodología Scrum y equipos de ingeniería distribuidos."
+      },
+      "qa": {
+        "question": "¿Cuál es su experiencia en QA Automation?",
+        "answer": "Lideró la estrategia de QA en Blue Data Service (Feb 2024 – Sep 2026) para software de salud, diseñando y ejecutando marcos de automatización E2E y APIs REST con Playwright, Cypress y Postman. Logró 90% de cobertura E2E automatizada en módulos críticos de salud (admisiones, facturación, dispensación) y 30% de reducción de defectos en producción mediante generación de pruebas aumentada con IA."
+      },
+      "ai": {
+        "question": "¿Cómo utiliza la IA en sus proyectos?",
+        "answer": "Usa orquestadores como Gentle-AI, Kimi K2 y DeepSeek para planificación de proyectos por fases y requerimientos técnicos; validación con IA (Open Code + MiniMax) para alinear historias de usuario con código implementado y reducir defectos antes de salida a producción; y modelos como Gemini y Claude para acelerar la escritura de código y auto-generar pruebas E2E con Playwright dentro de pipelines CI/CD. Resultado: 40% de reducción en tiempos de entrega."
+      },
+      "projects": {
+        "question": "¿Qué tipo de proyectos ha desarrollado?",
+        "answer": "Resume Tailor AI v2.5 (FastAPI + React 19 + Typst + análisis ATS con orquestación de LLMs en cadena), Plataforma HR-Tech SaaS Multi-Tenant (Spring Boot + Angular + PostgreSQL con RBAC/JWT), Tablero de Notas y Métricas Serverless (Laravel + React + AWS Lambda + Node.js), y un sistema de Inventarios y Monitoreo IoT con sensores ambientales en tiempo real."
+      },
+      "contact": {
+        "question": "¿Cómo puedo contactarlo?",
+        "answer": "Escríbele por LinkedIn (linkedin.com/in/johan-ospitia), WhatsApp (+57 322 359 5445), o email (jjohanospitia@gmail.com). También está disponible en GitHub (@JOspitia) para colaboraciones, code reviews y pull requests."
+      }
+    }
   },
   "footer": {
     "builtWith": "Construido con React, TypeScript y Tailwind",

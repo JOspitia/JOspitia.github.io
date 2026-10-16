@@ -1,6 +1,81 @@
-# Allow all crawlers full access to the site.
+# robots.txt — jospitia.github.io
+# =========================================================================
+# Policy summary:
+#   • All classic search engines (Googlebot, Bingbot, DuckDuckBot, etc.)
+#     are allowed full access to the site. This is the default for a
+#     personal portfolio.
+#   • AI crawlers (GPTBot, anthropic-ai, ClaudeBot, PerplexityBot,
+#     Google-Extended, CCBot, Applebot-Extended) are EXPLICITLY ALLOWED.
+#     Keeping them open maximizes Generative Engine Optimization (GEO)
+#     — the chance that ChatGPT, Claude, Perplexity and Google's AI
+#     Overviews cite this site as a source for "full-stack developer
+#     Cali" / "QA automation engineer Colombia" style queries.
+#   • The yandex / baiduspider / sogou entries are kept explicit so
+#     regional crawlers can opt out without affecting the rest.
+# =========================================================================
+
+# --- Generic --------------------------------------------------------------
 User-agent: *
 Allow: /
+# Crawl-delay is omitted on purpose: GitHub Pages is fast enough that
+# a delay would only slow down indexing for no benefit.
 
-# Tell crawlers where the sitemap lives.
 Sitemap: https://jospitia.github.io/sitemap.xml
+
+# --- AI / LLM crawlers (explicit allow for GEO) ----------------------------
+# OpenAI
+User-agent: GPTBot
+Allow: /
+
+# OpenAI (user-agent for ChatGPT browse mode)
+User-agent: OAI-SearchBot
+Allow: /
+
+# Anthropic
+User-agent: ClaudeBot
+Allow: /
+User-agent: Claude-User
+Allow: /
+
+# Perplexity
+User-agent: PerplexityBot
+Allow: /
+
+# Google AI Overviews / Gemini training pipeline
+User-agent: Google-Extended
+Allow: /
+
+# Common Crawl (used by many AI training pipelines)
+User-agent: CCBot
+Allow: /
+
+# Apple Intelligence opt-in
+User-agent: Applebot-Extended
+Allow: /
+
+# Meta AI
+User-agent: Meta-ExternalAgent
+Allow: /
+
+# --- Regional crawlers that some sites block (kept explicit) --------------
+User-agent: YandexBot
+Allow: /
+
+User-agent: Baiduspider
+Allow: /
+
+User-agent: Sogou
+Allow: /
+
+# --- Well-behaved ad / SEO bots (blocked to keep analytics clean) ----------
+User-agent: AhrefsBot
+Disallow: /
+
+User-agent: SemrushBot
+Disallow: /
+
+User-agent: MJ12bot
+Disallow: /
+
+User-agent: DotBot
+Disallow: /
