@@ -90,25 +90,38 @@
          verification completes — required to keep the property verified). -->
     <meta name="google-site-verification" content="wN6vgsPTHgafS5375BQe2unxz_vsWAbJEYike5VTASY" />
 
-    <!-- Bing Webmaster Tools verification. After registering the site at
-         https://www.bing.com/webmasters, paste the verification token here.
-         Until then, the meta tag is inert. -->
-    <meta name="msvalidate.01" content="" />
+    <!-- Bing Webmaster Tools verification (meta tag method). Bing also
+         accepts the file-based method via /BingSiteAuth.xml which is
+         present in public/ — either method works, this meta tag is the
+         primary. Token obtained from Bing Webmaster Tools dashboard. -->
+    <meta name="msvalidate.01" content="7362B1B827C25DB337481B9902645B43" />
 
-    <!-- Yandex Webmaster verification. After registering at
-         https://webmaster.yandex.com, paste the token here. -->
-    <meta name="yandex-verification" content="" />
+    <!-- Yandex Webmaster verification (meta tag + file backup). The
+         HTML file /yandex_4dbd55266e43d262.html is also served from
+         public/ as the file-based fallback; Yandex will accept whichever
+         validates first. Token obtained from Yandex Webmaster dashboard. -->
+    <meta name="yandex-verification" content="4dbd55266e43d262" />
 
     <!-- Pinterest site verification. After claiming at
-         https://analytics.pinterest.com, paste the tag here. -->
+         https://analytics.pinterest.com, paste the tag here.
+         Token not yet generated — placeholder kept so the schema is
+         stable once the tag arrives. -->
     <meta name="p:domain_verify" content="" />
 
     <!-- Plausible Analytics — privacy-friendly, no cookie banner.
-         After adding the site at https://plausible.io/sites, the
-         domain-key script URL below becomes live. Until then it 404s
-         silently. Easy to remove: just delete this <script> tag. -->
-    <script defer data-domain="jospitia.github.io"
-      src="https://plausible.io/js/script.js"></script>
+         Using the **custom-domain** script (`pa-…js`) instead of the
+         generic `script.js` because the site is tracked under a custom
+         subdomain in the Plausible dashboard; the encoded script name
+         makes the `data-domain` attribute unnecessary. The
+         `plausible.init()` boilerplate below enables outbound link
+         and file-download tracking out of the box. -->
+    <script async src="https://plausible.io/js/pa-UgMrOBwdtI4QyBnrbncRi.js"></script>
+    <script>
+      window.plausible = window.plausible || function () {
+        (plausible.q = plausible.q || []).push(arguments);
+      };
+      plausible.init();
+    </script>
 
     <!-- Open Graph (Facebook, LinkedIn, Slack, Discord, WhatsApp previews).
          og:type=profile is the spec-correct type for a Person landing
