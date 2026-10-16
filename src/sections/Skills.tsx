@@ -89,7 +89,7 @@ export function Skills(): JSX.Element {
                     return (
                       <p
                         key={skill.id}
-                        className="text-[var(--fg-page)]"
+                        className={`text-[var(--fg-page)] ${skill.featured ? 'font-bold' : ''}`}
                         style={{ paddingLeft: '1.25rem' }}
                         title={t(`skills.levels.${levelToTier(skill.level)}`)}
                       >
@@ -135,7 +135,7 @@ export function Skills(): JSX.Element {
                 className="invert-on-hover border border-current/30 bg-[var(--terminal-800)] p-4 text-center"
                 title={t(`skills.levels.${levelToTier(skill.level)}`)}
               >
-                <p className="font-mono text-sm font-bold text-[var(--fg-page)]">{skill.name}</p>
+                <p className="invert-target font-mono text-sm font-bold text-[var(--fg-page)]">{skill.name}</p>
               </li>
             ))}
           </Reveal>

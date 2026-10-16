@@ -121,8 +121,7 @@
   },
   "contact": {
     "title": "Contacto",
-    "subtitle": "Abierto a proyectos, propuestas profesionales y colaboraciones técnicas.",
-    "cta": "Escribir"
+    "subtitle": "Abierto a proyectos, propuestas profesionales y colaboraciones técnicas."
   },
   "faq": {
     "title": "Preguntas frecuentes",
@@ -161,7 +160,7 @@
   "footer": {
     "builtWith": "Construido con React, TypeScript y Tailwind",
     "deployedOn": "Desplegado en GitHub Pages",
-    "copyright": "© {{year}} Johan Ospitia. Todos los derechos reservados."
+    "copyright": "Johan Ospitia. Todos los derechos reservados."
   },
   "status": {
     "available": "Disponible para trabajo remoto",

@@ -1,5 +1,4 @@
 import type { JSX } from 'react';
-import { useTranslation } from 'react-i18next';
 import { Container } from '../components/Container';
 import { SectionHeading } from '../components/SectionHeading';
 import { SocialLinks } from '../components/SocialLinks';
@@ -12,7 +11,6 @@ import { Magnetic } from '../components/Magnetic';
  * in <Magnetic /> so it subtly pulls toward the cursor.
  */
 export function Contact(): JSX.Element {
-  const { t } = useTranslation();
   return (
     <section
       id="contact"
@@ -77,8 +75,7 @@ export function Contact(): JSX.Element {
           </p>
         </Reveal>
 
-        <div className="mt-6 flex flex-col items-center gap-2 text-[var(--muted)]">
-          <p className="font-mono text-xs uppercase tracking-wider">{t('contact.cta')}</p>
+        <div className="mt-6 flex flex-col items-center gap-3 text-[var(--muted)]">
           <SocialLinks />
         </div>
       </Container>

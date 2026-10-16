@@ -121,8 +121,7 @@
   },
   "contact": {
     "title": "Get in touch",
-    "subtitle": "Open to projects, professional proposals, and technical collaborations.",
-    "cta": "Reach out"
+    "subtitle": "Open to projects, professional proposals, and technical collaborations."
   },
   "faq": {
     "title": "Frequently asked questions",
@@ -161,7 +160,7 @@
   "footer": {
     "builtWith": "Built with React, TypeScript, and Tailwind",
     "deployedOn": "Deployed on GitHub Pages",
-    "copyright": "© {{year}} Johan Ospitia. All rights reserved."
+    "copyright": "Johan Ospitia. All rights reserved."
   },
   "status": {
     "available": "Available for remote work",
