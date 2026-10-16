@@ -109,19 +109,18 @@
     <meta name="p:domain_verify" content="" />
 
     <!-- Plausible Analytics — privacy-friendly, no cookie banner.
-         Using the **custom-domain** script (`pa-…js`) instead of the
-         generic `script.js` because the site is tracked under a custom
-         subdomain in the Plausible dashboard; the encoded script name
-         makes the `data-domain` attribute unnecessary. The
-         `plausible.init()` boilerplate below enables outbound link
-         and file-download tracking out of the box. -->
-    <script async src="https://plausible.io/js/pa-UgMrOBwdtI4QyBnrbncRi.js"></script>
-    <script>
-      window.plausible = window.plausible || function () {
-        (plausible.q = plausible.q || []).push(arguments);
-      };
-      plausible.init();
-    </script>
+         The site is registered in the Plausible dashboard under
+         `jospitia.github.io`, so we use the generic script with
+         the `data-domain` attribute (the `pa-XXX.js` custom-domain
+         variant is only for self-hosted deployments and would not
+         match here). `data-outbound-links` enables automatic
+         tracking of clicks leaving the portfolio — useful for
+         measuring LinkedIn/GitHub/CV clicks from the Contact and
+         Projects sections. -->
+    <script defer
+      data-domain="jospitia.github.io"
+      data-outbound-links
+      src="https://plausible.io/js/script.js"></script>
 
     <!-- Open Graph (Facebook, LinkedIn, Slack, Discord, WhatsApp previews).
          og:type=profile is the spec-correct type for a Person landing
