@@ -21,7 +21,7 @@
     "title": "About me",
     "lead": "Computer Engineer with 4+ years of experience as a Full-Stack Developer, fluent in Java, Spring Boot, Node.js, PHP, React, and Angular.",
     "body": "I've actively participated in the complete software lifecycle: from requirements gathering and user story generation to initial architecture, Full-Stack development, and production deployment. Additionally, I've led quality strategies ensuring system stability through advanced automation with Playwright and Cypress.",
-    "ai": "I enhance every stage of the development cycle with AI in a concrete and measurable way: I use orchestrators like Gentle-AI, Kimi K2 and DeepSeek for phase-based project planning and technical requirements structuring; Open Code + MiniMax to validate user stories against implemented code, reducing defects before production; and models like Gemini and Claude (via Antigravity) to accelerate code writing and automated E2E test suite generation with Playwright within CI/CD pipelines under Scrum. Computer Engineer from Universidad Autónoma de Nariño (Colombia), currently pursuing a Master's in Project Management at UNIR — Universidad Internacional de La Rioja (Spain).",
+    "ai": "I use AI at every layer of the stack. Orchestrators like Gentle-AI, Kimi K2 and DeepSeek handle phase-based project planning and requirements structuring; Open Code + MiniMax validates user stories against implemented code (reducing defects before production); and Gemini and Claude (via Antigravity) accelerate code writing and auto-generate Playwright E2E suites in CI/CD under Scrum. I also build retrieval-augmented generation systems end-to-end — vectorized knowledge bases with Pinecone, OpenAI text-embedding-3-small for embeddings, GPT-4o-mini for answer synthesis with citation-grounded outputs, PDF/TXT ingestion with overlap chunking, and similarity search with configurable score thresholds; all wired through a hexagonal architecture (Ports & Adapters) so the LLM provider and vector store are swappable. The rag-tech project is the production embodiment of this stack: a FastAPI service that ingests documents, indexes them in Pinecone, retrieves the most relevant chunks per query, and returns answers with their source citations.",
     "photoAlt": "Portrait of Johan Ospitia",
     "highlights": {
       "years": "4+ years",
@@ -110,7 +110,7 @@
         "description": "System for warehouses, products, lots, kardex, transfers, prescriptions and dispensation with special control. Real-time environmental monitoring (temperature/humidity) via IoT sensors. Granular role-based permissions at row level. Laravel 9 + PHP 8.2 + React 19 + SQL Server 2025 + Playwright E2E + Docker Compose."
       },
       "javaTemplate": {
-        "title": "Java REST Template (no Spring)",
+        "title": "Java REST Template",
         "description": "Opinionated REST API skeleton: layered architecture with one-way dependencies, JWT with DB-backed revocable sessions, bcrypt with schema invariants, Flyway migrations, and 78 tests covering SQL injection, XSS, concurrency and session lifecycle. Custom ~40-line DI registry. Javalin + PostgreSQL 16. Ships with an AI-consumable SKILL.md spec."
       },
       "rag": {
@@ -149,7 +149,7 @@
       },
       "projects": {
         "question": "What kind of projects has Johan Ospitia built?",
-        "answer": "Six production-grade projects across Spring Boot, Laravel, FastAPI and Javalin: Resume Tailor AI v2.5 (FastAPI + React 19 + RenderCV/Typst + multi-LLM ATS auditor), HR-Tech Multi-Tenant SaaS (Spring Boot 3.4 + Angular 21 + MinIO + ClamAV), Pharmaceutical Warehouse & IoT Monitoring (Laravel 9 + React 19 + SQL Server 2025), Serverless Notes & Metrics Dashboard (Laravel 12 + React 18 + AWS Lambda + LocalStack), a Java REST Template (no Spring, 78 tests, JWT-revocable sessions), and a RAG API (FastAPI + Pinecone + OpenAI, hexagonal architecture)."
+        "answer": "Six production-grade projects across Spring Boot, Laravel, FastAPI and Javalin: Resume Tailor AI v2.5 (FastAPI + React 19 + RenderCV/Typst + multi-LLM ATS auditor), HR-Tech Multi-Tenant SaaS (Spring Boot 3.4 + Angular 21 + MinIO + ClamAV), Pharmaceutical Warehouse & IoT Monitoring (Laravel 9 + React 19 + SQL Server 2025), Serverless Notes & Metrics Dashboard (Laravel 12 + React 18 + AWS Lambda + LocalStack), a Java REST Template (78 tests, JWT-revocable sessions), and a RAG API (FastAPI + Pinecone + OpenAI, hexagonal architecture)."
       },
       "contact": {
         "question": "How can I contact Johan Ospitia?",
@@ -179,9 +179,7 @@
       "contact": "07"
     },
     "categoryFile": "categories",
-    "technologiesFile": "technologies",
-    "philosophyFile": "philosophy",
-    "philosophyText": "few-but-deep"
+    "technologiesFile": "technologies"
   },
   "languageSwitcher": {
     "label": "Language",

@@ -21,7 +21,7 @@
     "title": "Sobre mí",
     "lead": "Ingeniero Informático con más de 4 años de experiencia como Desarrollador Full-Stack, con dominio de Java, Spring Boot, Node.js, PHP, React y Angular.",
     "body": "He participado activamente en el ciclo completo del software: desde el levantamiento de requerimientos y la generación de historias de usuario hasta la definición de la arquitectura inicial, el desarrollo Full-Stack e implementación en producción. Adicionalmente, he liderado estrategias de calidad garantizando la estabilidad de sistemas mediante automatización avanzada con Playwright y Cypress.",
-    "ai": "Potencio cada etapa del ciclo de desarrollo con Inteligencia Artificial de forma concreta y medible: utilizo orquestadores como Gentle-AI, Kimi K2 y DeepSeek para planificar proyectos por fases y estructurar requerimientos técnicos; Open Code + MiniMax para validar historias de usuario contra el código implementado, reduciendo defectos antes de la salida a producción; y modelos como Gemini y Claude (vía Antigravity) para acelerar la escritura de código y la generación automatizada de suites de pruebas E2E con Playwright dentro de pipelines CI/CD bajo metodología Scrum. Ingeniero Informático de la Universidad Autónoma de Nariño (Colombia), actualmente curso una Maestría en Gerencia de Proyectos en UNIR — Universidad Internacional de La Rioja (España).",
+    "ai": "Uso IA en cada capa del stack. Los orquestadores como Gentle-AI, Kimi K2 y DeepSeek manejan planificación de proyectos por fases y estructuración de requerimientos; Open Code + MiniMax valida historias de usuario contra el código implementado (reduciendo defectos antes de salir a producción); y Gemini y Claude (vía Antigravity) aceleran la escritura de código y auto-generan suites de pruebas E2E con Playwright dentro de pipelines CI/CD bajo Scrum. También construyo sistemas de Retrieval-Augmented Generation de extremo a extremo — bases de conocimiento vectorizadas con Pinecone, embeddings vía OpenAI text-embedding-3-small, GPT-4o-mini para síntesis de respuestas con citas a fuentes, ingesta de PDF/TXT con chunking por overlap y búsqueda por similitud con score threshold configurable; todo cableado a través de arquitectura hexagonal (Ports & Adapters) para que el proveedor de LLM y el vector store sean intercambiables. El proyecto rag-tech es la encarnación productiva de este stack: un servicio FastAPI que ingiere documentos, los indexa en Pinecone, recupera los chunks más relevantes por consulta y devuelve respuestas con citas a sus fuentes.",
     "photoAlt": "Retrato de Johan Ospitia",
     "highlights": {
       "years": "4+ años",
@@ -110,7 +110,7 @@
         "description": "Sistema para bodegas, productos, lotes, kardex, traslados, prescripciones y dispensación con control especial. Monitoreo ambiental en tiempo real (temperatura/humedad) vía sensores IoT. Permisos granulares por rol a nivel de fila. Laravel 9 + PHP 8.2 + React 19 + SQL Server 2025 + Playwright E2E + Docker Compose."
       },
       "javaTemplate": {
-        "title": "Java REST Template (sin Spring)",
+        "title": "Java REST Template",
         "description": "Esqueleto opinionated de API REST: arquitectura por capas con dependencias en una sola dirección, JWT con sesiones revocables respaldado en DB, bcrypt con invariantes de esquema, migraciones Flyway y 78 tests cubriendo inyección SQL, XSS, concurrencia y ciclo de vida de sesión. Registry de DI custom de ~40 líneas. Javalin + PostgreSQL 16. Incluye SKILL.md consumible por IA."
       },
       "rag": {
@@ -149,7 +149,7 @@
       },
       "projects": {
         "question": "¿Qué tipo de proyectos ha desarrollado?",
-        "answer": "Seis proyectos de grado productivo en Spring Boot, Laravel, FastAPI y Javalin: Resume Tailor AI v2.5 (FastAPI + React 19 + RenderCV/Typst + auditor ATS multi-LLM), Plataforma HR-Tech SaaS Multi-Tenant (Spring Boot 3.4 + Angular 21 + MinIO + ClamAV), Gestión Farmacéutica y Monitoreo IoT (Laravel 9 + React 19 + SQL Server 2025), Tablero de Notas y Métricas Serverless (Laravel 12 + React 18 + AWS Lambda + LocalStack), un Java REST Template (sin Spring, 78 tests, sesiones JWT revocables) y una API RAG (FastAPI + Pinecone + OpenAI, arquitectura hexagonal)."
+        "answer": "Seis proyectos de grado productivo en Spring Boot, Laravel, FastAPI y Javalin: Resume Tailor AI v2.5 (FastAPI + React 19 + RenderCV/Typst + auditor ATS multi-LLM), Plataforma HR-Tech SaaS Multi-Tenant (Spring Boot 3.4 + Angular 21 + MinIO + ClamAV), Gestión Farmacéutica y Monitoreo IoT (Laravel 9 + React 19 + SQL Server 2025), Tablero de Notas y Métricas Serverless (Laravel 12 + React 18 + AWS Lambda + LocalStack), un Java REST Template (78 tests, sesiones JWT revocables) y una API RAG (FastAPI + Pinecone + OpenAI, arquitectura hexagonal)."
       },
       "contact": {
         "question": "¿Cómo puedo contactarlo?",
@@ -179,9 +179,7 @@
       "contact": "07"
     },
     "categoryFile": "categorias",
-    "technologiesFile": "tecnologias",
-    "philosophyFile": "filosofia",
-    "philosophyText": "pocas-pero-profundas"
+    "technologiesFile": "tecnologias"
   },
   "languageSwitcher": {
     "label": "Idioma",

@@ -115,7 +115,7 @@ export function Skills(): JSX.Element {
             })}
           </div>
           <p className="mt-4 border-t border-current/15 pt-3 text-[var(--muted)]">
-            {categoryCount} {t('ui.categoryFile')} · {totalCount} {t('ui.technologiesFile')} · 1 {t('ui.philosophyFile')} ({t('ui.philosophyText')})
+            {categoryCount} {t('ui.categoryFile')} · {totalCount} {t('ui.technologiesFile')}
           </p>
         </Reveal>
 

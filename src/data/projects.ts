@@ -21,7 +21,7 @@ import type { Project } from '../types/project';
  *                         `prueba-tecnica-johan-ospitia` to `pharmacy`
  *                         (the GitHub org refactor done 2026-09).
  *                         Stack: Laravel 9 + SQL Server 2025 + React 19.
- *  • java-rest-template — NEW. Java 25 + Javalin, no Spring, 78 tests,
+ *  • java-rest-template — NEW. Java 25 + Javalin, 78 tests,
  *                         JWT revocable sessions, Flyway. Written as a
  *                         reusable template + accompanying SKILL.md.
  *  • rag-api            — NEW. RAG system with FastAPI + Pinecone +
