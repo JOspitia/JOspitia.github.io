@@ -4,6 +4,8 @@
     "skills": "Stack",
     "experience": "Experiencia",
     "projects": "Proyectos",
+    "faq": "FAQ",
+    "uses": "Uses",
     "contact": "Contacto",
     "skipToContent": "Saltar al contenido"
   },
@@ -157,10 +159,50 @@
       }
     }
   },
+  "uses": {
+    "title": "/uses",
+    "subtitle": "Las herramientas, servicios y hardware que uso todos los días.",
+    "footer": "// inspirado en uses.tech · última edición 2026-10",
+    "editor": "editor",
+    "terminal": "terminal",
+    "runtime": "runtime",
+    "testing": "testing",
+    "cloud": "cloud",
+    "ai": "ai",
+    "productivity": "productivity",
+    "hardware": "hardware",
+    "editorVscode": "driver diario, sintaxis Insiders",
+    "editorVim": "edición modal para sesiones largas de refactor",
+    "terminalWindows": "entorno nativo Windows",
+    "terminalTmux": "persistencia de sesión en boxes remotos",
+    "runtimeNode": "LTS, 20.x para paridad con producción",
+    "runtimePnpm": "instalaciones más rápidas, store content-addressable",
+    "runtimeJava": "LTS, lenguaje de backend",
+    "runtimePhp": "8.2, lenguaje de proyectos Laravel",
+    "runtimePython": "3.12, scripts de ML/RAG",
+    "testingPlaywright": "E2E default, matriz multi-browser",
+    "testingCypress": "suites E2E legadas, proyectos de salud",
+    "testingPostman": "contratos API + autoría de smoke tests",
+    "cloudActions": "CI/CD, todos los repos",
+    "cloudDocker": "paridad local, compose v2",
+    "cloudLocalstack": "emulación Lambda + S3 offline",
+    "aiCopilot": "autocomplete + chat, en cada tecla",
+    "aiReview": "segunda opinión para decisiones de arquitectura",
+    "aiOrchestrators": "planificación por fases para trabajo no-trivial",
+    "productivityLinear": "tracking de issues, planning de sprints",
+    "productivityNotion": "documentación larga, briefs de proyecto",
+    "productivityObsidian": "base de conocimiento personal, Zettelkasten",
+    "hardwareLaptop": "Dell Inspiron 16 Plus, 32 GB RAM",
+    "hardwareKeyboard": "Logitech MX Keys, teclas bajas",
+    "hardwareMouse": "Logitech MX Master 3S, scroll horizontal",
+    "hardwareHeadphones": "Sony WH-1000XM5, cancelación de ruido"
+  },
   "footer": {
     "builtWith": "Construido con React, TypeScript y Tailwind",
     "deployedOn": "Desplegado en GitHub Pages",
-    "copyright": "Johan Ospitia. Todos los derechos reservados."
+    "copyright": "Johan Ospitia. Todos los derechos reservados.",
+    "privacyLink": "Privacidad",
+    "indexNowKey": "indexnow-key"
   },
   "status": {
     "available": "Disponible para trabajo remoto",
@@ -176,7 +218,8 @@
       "experience": "04",
       "projects": "05",
       "faq": "06",
-      "contact": "07"
+      "uses": "07",
+      "contact": "08"
     },
     "categoryFile": "categorias",
     "technologiesFile": "tecnologias"

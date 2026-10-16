@@ -1,0 +1,34 @@
+# IndexNow API key placeholder
+#
+# 1. Generate a UUID-shaped key at https://www.indexnow.org/
+#    (any 8-128 char hex/UUID string works — e.g. a1b2c3d4e5f6...)
+# 2. Replace the line below with your key
+# 3. Then ping the API to submit all URLs in one shot:
+#
+#    curl -X POST "https://api.indexnow.org/indexnow" \
+#         -H "Content-Type: application/json" \
+#         -d '{
+#           "host": "jospitia.github.io",
+#           "key":  "YOUR_KEY_HERE",
+#           "keyLocation": "https://jospitia.github.io/indexnow-key.txt",
+#           "urlList": [
+#             "https://jospitia.github.io/",
+#             "https://jospitia.github.io/#about",
+#             "https://jospitia.github.io/#skills",
+#             "https://jospitia.github.io/#experience",
+#             "https://jospitia.github.io/#projects",
+#             "https://jospitia.github.io/#faq",
+#             "https://jospitia.github.io/#uses",
+#             "https://jospitia.github.io/#contact",
+#             "https://jospitia.github.io/privacy.html"
+#           ]
+#         }'
+#
+# Bing + Yandex will each take ~5 min to crawl and start surfacing.
+# Re-ping every time you push a meaningful content change.
+#
+# ⚠️ Keep this file publicly accessible — IndexNow validates the key
+#    by fetching this URL. Do NOT add auth headers; GitHub Pages will
+#    serve it as plain text automatically.
+
+REPLACE_WITH_YOUR_INDEXNOW_KEY
