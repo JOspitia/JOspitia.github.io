@@ -5,7 +5,7 @@ import { LanguageSwitcher } from './LanguageSwitcher';
 import { useActiveSection } from '../hooks/useActiveSection';
 import { profile } from '../data/profile';
 
-const NAV_IDS = ['about', 'skills', 'experience', 'projects', 'contact'] as const;
+const NAV_IDS = ['about', 'skills', 'experience', 'projects', 'faq', 'uses', 'contact'] as const;
 type NavId = (typeof NAV_IDS)[number];
 
 const NAV_KEYS: Record<NavId, string> = {
@@ -13,6 +13,8 @@ const NAV_KEYS: Record<NavId, string> = {
   skills: 'nav.skills',
   experience: 'nav.experience',
   projects: 'nav.projects',
+  faq: 'nav.faq',
+  uses: 'nav.uses',
   contact: 'nav.contact',
 };
 

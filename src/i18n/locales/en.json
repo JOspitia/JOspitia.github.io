@@ -1,9 +1,11 @@
 {
   "nav": {
     "about": "About",
-    "skills": "Skills",
+    "skills": "Stack",
     "experience": "Experience",
     "projects": "Projects",
+    "faq": "FAQ",
+    "uses": "Uses",
     "contact": "Contact",
     "skipToContent": "Skip to content"
   },
@@ -157,10 +159,50 @@
       }
     }
   },
+  "uses": {
+    "title": "/uses",
+    "subtitle": "The tools, services and hardware I reach for every day.",
+    "footer": "// inspired by uses.tech · last edited 2026-10",
+    "editor": "editor",
+    "terminal": "terminal",
+    "runtime": "runtime",
+    "testing": "testing",
+    "cloud": "cloud",
+    "ai": "ai",
+    "productivity": "productivity",
+    "hardware": "hardware",
+    "editorVscode": "daily driver, Insiders syntax",
+    "editorVim": "modal editing for long refactor sessions",
+    "terminalWindows": "native Windows dev environment",
+    "terminalTmux": "session persistence on remote boxes",
+    "runtimeNode": "LTS, 20.x for production parity",
+    "runtimePnpm": "faster installs, content-addressable store",
+    "runtimeJava": "LTS, project language for backend",
+    "runtimePhp": "8.2, project language for Laravel",
+    "runtimePython": "3.12, ML/RAG scripts",
+    "testingPlaywright": "E2E default, multi-browser matrix",
+    "testingCypress": "legacy E2E suites, healthcare projects",
+    "testingPostman": "API contract + smoke test authoring",
+    "cloudActions": "CI/CD, every repo",
+    "cloudDocker": "local stack parity, compose v2",
+    "cloudLocalstack": "Lambda + S3 emulation offline",
+    "aiCopilot": "autocomplete + chat, every keystroke",
+    "aiReview": "second pair of eyes for architecture decisions",
+    "aiOrchestrators": "phase-based planning for non-trivial work",
+    "productivityLinear": "issue tracking, sprint planning",
+    "productivityNotion": "long-form docs, project briefs",
+    "productivityObsidian": "personal knowledge base, Zettelkasten",
+    "hardwareLaptop": "Dell Inspiron 16 Plus, 32 GB RAM",
+    "hardwareKeyboard": "Logitech MX Keys, low-profile",
+    "hardwareMouse": "Logitech MX Master 3S, horizontal scroll",
+    "hardwareHeadphones": "Sony WH-1000XM5, noise canceling"
+  },
   "footer": {
     "builtWith": "Built with React, TypeScript, and Tailwind",
     "deployedOn": "Deployed on GitHub Pages",
-    "copyright": "Johan Ospitia. All rights reserved."
+    "copyright": "Johan Ospitia. All rights reserved.",
+    "privacyLink": "Privacy",
+    "indexNowKey": "indexnow-key"
   },
   "status": {
     "available": "Available for remote work",
@@ -176,7 +218,8 @@
       "experience": "04",
       "projects": "05",
       "faq": "06",
-      "contact": "07"
+      "uses": "07",
+      "contact": "08"
     },
     "categoryFile": "categories",
     "technologiesFile": "technologies"

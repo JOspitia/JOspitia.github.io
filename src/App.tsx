@@ -10,6 +10,7 @@ import { Skills } from './sections/Skills';
 import { Experience } from './sections/Experience';
 import { Projects } from './sections/Projects';
 import { FAQ } from './sections/FAQ';
+import { Uses } from './sections/Uses';
 import { Contact } from './sections/Contact';
 import { Footer } from './sections/Footer';
 
@@ -47,6 +48,7 @@ function App(): JSX.Element {
         <Experience />
         <Projects />
         <FAQ />
+        <Uses />
         <Contact />
       </main>
       <Footer />

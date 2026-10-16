@@ -7,7 +7,7 @@ type SectionHeadingProps = {
   /** Optional i18n key for the muted subtitle rendered below the title. */
   subtitleKey?: string;
   /** Section id without the '#' prefix, used to render "01/" markers. */
-  sectionKey?: 'hero' | 'about' | 'skills' | 'experience' | 'projects' | 'faq' | 'contact';
+  sectionKey?: 'hero' | 'about' | 'skills' | 'experience' | 'projects' | 'faq' | 'uses' | 'contact';
   align?: 'left' | 'center';
 };
 

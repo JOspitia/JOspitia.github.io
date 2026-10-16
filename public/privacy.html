@@ -1,0 +1,195 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="theme-color" content="#0a0a0a" />
+    <title>Privacy — Johan Ospitia</title>
+    <meta
+      name="description"
+      content="Privacy policy for jospitia.github.io: what data is collected (almost none), how to opt out, and contact channels."
+    />
+    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      rel="stylesheet"
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=JetBrains+Mono:wght@400;500;600&display=swap"
+    />
+    <style>
+      :root {
+        color-scheme: dark light;
+        --bg-page: #0a0a0a;
+        --fg-page: #fafafa;
+        --border-color: #262626;
+        --muted: #a3a3a3;
+        --accent: #00ff88;
+      }
+      @media (prefers-color-scheme: light) {
+        :root {
+          color-scheme: light;
+          --bg-page: #fafafa;
+          --fg-page: #0a0a0a;
+          --border-color: #e5e5e5;
+          --muted: #525252;
+          --accent: #00b85f;
+        }
+      }
+      * { box-sizing: border-box; }
+      html, body {
+        margin: 0;
+        padding: 0;
+        background: var(--bg-page);
+        color: var(--fg-page);
+        font-family: 'Inter', system-ui, sans-serif;
+        -webkit-font-smoothing: antialiased;
+      }
+      ::selection { background: var(--accent); color: var(--bg-page); }
+      a { color: var(--accent); text-decoration: none; border-bottom: 1px solid transparent; }
+      a:hover { border-bottom-color: var(--accent); }
+      .wrap {
+        max-width: 720px;
+        margin: 0 auto;
+        padding: 3rem 1.25rem 6rem;
+      }
+      .header {
+        margin-bottom: 3rem;
+        border-bottom: 1px solid var(--border-color);
+        padding-bottom: 1.5rem;
+      }
+      .marker {
+        font-family: 'JetBrains Mono', ui-monospace, monospace;
+        font-size: 0.75rem;
+        letter-spacing: 0.02em;
+        color: var(--accent);
+        text-transform: uppercase;
+      }
+      h1 {
+        font-family: 'JetBrains Mono', ui-monospace, monospace;
+        font-size: 2rem;
+        margin: 0.5rem 0 0.25rem;
+        letter-spacing: -0.02em;
+      }
+      h2 {
+        font-family: 'JetBrains Mono', ui-monospace, monospace;
+        font-size: 1.25rem;
+        margin: 2.5rem 0 0.75rem;
+        color: var(--accent);
+      }
+      p, li { line-height: 1.65; }
+      p { margin: 0 0 1rem; color: var(--fg-page); }
+      .muted { color: var(--muted); font-size: 0.875rem; }
+      ul { padding-left: 1.25rem; }
+      li { margin-bottom: 0.4rem; }
+      code {
+        font-family: 'JetBrains Mono', ui-monospace, monospace;
+        background: rgba(127,127,127,0.12);
+        padding: 0.1em 0.35em;
+        font-size: 0.85em;
+      }
+      .back {
+        display: inline-block;
+        margin-top: 3rem;
+        font-family: 'JetBrains Mono', ui-monospace, monospace;
+        font-size: 0.85rem;
+        color: var(--muted);
+      }
+      .back:hover { color: var(--accent); }
+      .ascii-divider {
+        font-family: 'JetBrains Mono', ui-monospace, monospace;
+        color: var(--border-color);
+        margin: 2rem 0;
+        user-select: none;
+      }
+    </style>
+  </head>
+  <body>
+    <main class="wrap">
+      <header class="header">
+        <p class="marker">PRIVACY_POLICY.md</p>
+        <h1>Privacy</h1>
+        <p class="muted">Last updated: 2026-10-16 · Effective immediately</p>
+      </header>
+
+      <p>
+        This page documents what data <code>jospitia.github.io</code> collects
+        about you, and how to opt out. The short version: <strong>nothing
+        personally identifiable</strong>, ever, by default.
+      </p>
+
+      <div class="ascii-divider">──────────────────────────────────</div>
+
+      <h2>1. Data I do NOT collect</h2>
+      <p>
+        The site itself does not set any cookies, does not run any analytics
+        scripts by default, and does not embed any third-party trackers.
+        There is no form on the page that POSTs data to any backend.
+      </p>
+
+      <h2>2. Third-party requests (the only data flow)</h2>
+      <p>
+        When your browser loads a page it makes a small number of standard
+        third-party requests. These are not under my control but I list them
+        here for transparency:
+      </p>
+      <ul>
+        <li>
+          <strong>Google Fonts</strong> (Inter + JetBrains Mono): CSS +
+          font-file requests to <code>fonts.googleapis.com</code> /
+          <code>fonts.gstatic.com</code>. Google's privacy policy applies.
+        </li>
+        <li>
+          <strong>GitHub Pages</strong>: hosts the static files; logs
+          (IP + user agent) are stored by GitHub per their
+          <a href="https://docs.github.com/en/site-policy/privacy-policies/github-privacy-statement" target="_blank" rel="noopener noreferrer">privacy policy</a>.
+        </li>
+      </ul>
+
+      <h2>3. Optional analytics (Plausible)</h2>
+      <p>
+        If I ever enable privacy-friendly analytics (Plausible.io) it will
+        be added <strong>after</strong> a notice on this page. Plausible
+        itself is cookie-less, GDPR/CCPA compliant, and only records
+        aggregated counts (page views, referrer, country). No personal
+        identifiers, no cross-site tracking.
+      </p>
+
+      <h2>4. AI crawlers</h2>
+      <p>
+        The <code>robots.txt</code> explicitly allows AI crawlers
+        (GPTBot, ClaudeBot, PerplexityBot, Google-Extended, CCBot,
+        Applebot-Extended, Meta-ExternalAgent) so they can cite this
+        site when answering questions about the author. They may retain
+        copies of public pages for training or retrieval. This is opt-in
+        from the site owner's side; you can opt out at the browser
+        level by using tools like
+        <a href="https://noscript.net/" target="_blank" rel="noopener noreferrer">NoScript</a> or
+        <a href="https://duckduckgo.com" target="_blank" rel="noopener noreferrer">DuckDuckGo</a>.
+      </p>
+
+      <h2>5. Contact data you send me</h2>
+      <p>
+        If you email me (jjohanospitia@gmail.com), message me on LinkedIn,
+        WhatsApp, or any other channel listed on the contact section,
+        the data you share is held by those platforms under their own
+        privacy policies and is not stored anywhere on
+        <code>jospitia.github.io</code>.
+      </p>
+
+      <h2>6. Your rights</h2>
+      <ul>
+        <li>Right to know what is collected (this page answers that).</li>
+        <li>Right to deletion: contact me and I'll delete any records I hold.</li>
+        <li>Right to opt out of analytics: do-not-track header is respected by Plausible.</li>
+      </ul>
+
+      <h2>7. Changes to this policy</h2>
+      <p>
+        Any change bumps the "Last updated" date above. Material changes
+        (e.g. enabling analytics) will also be announced on the homepage.
+      </p>
+
+      <a class="back" href="/">← back to portfolio</a>
+    </main>
+  </body>
+</html>
